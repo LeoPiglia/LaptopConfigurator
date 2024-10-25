@@ -1,0 +1,1467 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza/"
+     xml:base="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:LaptopConfigModellazione="http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#"
+     xmlns:LaptopConfiguratorModellazioneGestioneConoscenza="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza">
+        <rdfs:comment xml:lang="en">This ontology defines the structure and relationships of laptop components, including hardware, peripherals, and features. It provides a framework for understanding various elements such as the CPU, GPU, display, keyboard, and ports, facilitating knowledge sharing about laptop configurations and functionalities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Laptop Configurator</rdfs:label>
+        <owl:versionInfo xml:lang="en">v1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAccessory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAccessory">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAccessoryOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:comment xml:lang="en">This property links a Laptop to its Accessories.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Accessory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAudioSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAudioSystem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAudioSystemOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <rdfs:comment xml:lang="en">This property links a Laptop to its AudioSystem</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Audio System</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasBattery -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasBattery">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery"/>
+        <rdfs:comment xml:lang="en">This property link a laptop to its battery</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Battery</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasColour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasColour">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+        <rdfs:comment xml:lang="en">This property associates a Laptop with its Colour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Colour</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <rdfs:comment xml:lang="en">This property associate a laptop with its Cooling System.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Cooling System</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasGuarantee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasGuarantee">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsGuaranteeOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee"/>
+        <rdfs:comment xml:lang="en">This property links a Laptop to its Guarantee.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Guarantee</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasHardwareComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasHardwareComponent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsHardwareComponentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">This property connects a laptop to its hardware component</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Hardware Component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOperatingSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOperatingSystem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsOperativeSystemOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <rdfs:comment xml:lang="en">This property links a laptop to its OperatingSystem</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Operating System</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasPort -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasPort">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port"/>
+        <rdfs:comment xml:lang="en">this property connects a laptop to its port.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Port</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasSecurity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasSecurity">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsSecurityOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security"/>
+        <rdfs:comment xml:lang="en">This property links a Laptop to its Security.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Security</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAccessoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAccessoryOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment xml:lang="en">This is the inverse property of &quot;hasAccessory&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Accessory Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAudioSystemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsAudioSystemOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment xml:lang="en">This is the inverse property oh &quot;HasAudioSystem&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Audio System Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsGuaranteeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsGuaranteeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment xml:lang="en">This is the inverse property of &quot;hasGuarantee&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Guarantee Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsHardwareComponentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsHardwareComponentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment>This is the inverse property of &quot;HasHardwareComponent&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Hardware Component Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsOperativeSystemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsOperativeSystemOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment xml:lang="en">This is the inverse propery of has operating System</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Operating System Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsSecurityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IsSecurityOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <rdfs:comment xml:lang="en">This is the inverse property of &quot;hasSecurity&quot;. It links a Security to the Laptop it secures, indicating that the security is implemented on the laptop to protect it from threats.</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Security Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#hasCoolingSystemType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#hasCoolingSystemType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the type of cooling system used in the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">HasCoolingSystemType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAntivirusVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAntivirusVersion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property defines the version of the antivirus software installed on the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Antivirus Version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasBatteryCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasBatteryCapacity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property indicates the battery capacity of the laptop, typically measured in milliampere-hours (mAh) or watt-hours (Wh)</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Battery Capacity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCPUSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCPUSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the clock speed of the CPU in gigahertz (GHz).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has CPU Speed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasColourName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasColourName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property represents the color name of the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Colour Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasConnectionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasConnectionType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data properties, rapresent the connection type of accessory or other device with the laptop</rdfs:comment>
+        <rdfs:label xml:lang="en">HasConnectionType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasDisplayResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasDisplayResolution">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property rapresent the screen resolution of the laptop&apos;s display.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Display Resolution</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasExternalKeyboardLayout -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasExternalKeyboardLayout">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property defines the layout of the keyboard QWERTY or AZERTY).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has External Keyboard Layout</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasExternalMonitorResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasExternalMonitorResolution">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data properties describe the resolutuon of the external monitor</rdfs:comment>
+        <rdfs:label xml:lang="en">Has External Monitor Resolution</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasGuaranteePeriod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasGuaranteePeriod">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">This data properties rapresent the guarantee&apos;s period of Laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Guarantee Period</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasHdmiVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasHdmiVersion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the version of the HDMI port.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has HDMI Version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasKeyBoardLayout -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasKeyBoardLayout">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property defines the layout of the keyboard QWERTY or AZERTY).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Keyboard Layout</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOperatingSystemEdition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOperatingSystemEdition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data properties rapresent the edition of operative system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Operating Syestem Edition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOutputPower -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasOutputPower">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This Data properties rapresent the output power of AudioSystem express in W</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Output Power</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasProtectionFeatureType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasProtectionFeatureType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property represents the type of protection feature.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Protection Feature Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasRAMSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasRAMSize">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the amount of RAM (Random Access Memory) installed in the laptop, usually measured in gigabytes (GB).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has RAM Size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasStorageCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasStorageCapacity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the storage capacity of the laptop&apos;s hard drive or SSD, measured in gigabytes (GB) or terabytes (TB).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Storage Capacity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasUsbType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasUsbType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property indicates the type of USB port available on the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has USB Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasVideoMemory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasVideoMemory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property represents the amount of dedicated video memory on the graphics card, typically measured in megabytes (MB) or gigabytes (GB).</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Video Memory</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasWebcamResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasWebcamResolution">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data property specifies the resolution of the laptop&apos;s integrated webcam.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Webcam Resolution</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#hasTrackpadDimensions -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#hasTrackpadDimensions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data properties rapresent the dimension of the trackpad.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Trackpad Dimension</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory">
+        <rdfs:comment xml:lang="en">Represents a collection of accessories for the laptop, including a mouse, a protective case, a cooling stand with fans, and an external hard drive, designed to enhance usability, portability, and storage capacity</rdfs:comment>
+        <rdfs:label xml:lang="en">Accessory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature"/>
+        <rdfs:comment xml:lang="en">Rapresent software for detect and remove malware</rdfs:comment>
+        <rdfs:label xml:lang="en">Antivirus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem">
+        <rdfs:comment xml:lang="en">Rapresent the audio output System</rdfs:comment>
+        <rdfs:label xml:lang="en">Audio System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery">
+        <rdfs:comment xml:lang="en">Represents the power storage unit of the laptop, determining the device&apos;s operational time without external power.</rdfs:comment>
+        <rdfs:label xml:lang="en">Battery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour">
+        <rdfs:comment xml:lang="en">Rapresent the colours available for the lapop</rdfs:comment>
+        <rdfs:label xml:lang="en">Colour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem">
+        <rdfs:comment xml:lang="en">Cooling System</rdfs:comment>
+        <rdfs:comment xml:lang="en">Represents the components responsible for maintaining optimal operating temperatures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the Central Processing Unit, the primary processor responsible for executing instructions and processing data in the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">CPU (Central Processing Unit)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the visual output component of the laptop, responsible for rendering images, videos, and graphics</rdfs:comment>
+        <rdfs:label xml:lang="en">Display</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:comment xml:lang="en">This class rapresent the esternal Keyboard of the laptop. Is an accessory</rdfs:comment>
+        <rdfs:label xml:lang="en">External Keyboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:comment xml:lang="en">Represents an additional monitor that can be connected to the laptop.</rdfs:comment>
+        <rdfs:label xml:lang="en">External Monitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the hardware component responsible for rendering images, animations, and video for the laptop. The graphics card enhances visual performance for gaming, graphic design, and multimedia applications, and can be integrated or discrete, influencing the overall performance of the system</rdfs:comment>
+        <rdfs:label xml:lang="en">Graphics card</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee">
+        <rdfs:comment xml:lang="en">Rapresent the protection plan for the laptop</rdfs:comment>
+        <rdfs:label xml:lang="en">Guarantee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent">
+        <rdfs:comment xml:lang="en">Rapresent hardware components of the laptop</rdfs:comment>
+        <rdfs:label xml:lang="en">Hardware component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb"/>
+        <rdfs:comment xml:lang="en">Represents the HDMI port on the laptop that enables high-definition audio and video output to external displays, such as monitors, TVs, and projectors, facilitating seamless multimedia connectivity</rdfs:comment>
+        <rdfs:label xml:lang="en">Hdmi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents an input device consisting of a set of keys used to input data and commands into the laptop, facilitating typing, navigation, and control of software applications</rdfs:comment>
+        <rdfs:label xml:lang="en">Keyboard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop">
+        <rdfs:comment xml:lang="en">Represents the entire configurable laptop system</rdfs:comment>
+        <rdfs:label xml:lang="en">Laptop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Mouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Mouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+        <rdfs:comment xml:lang="en">Represents an external pointing device used to control the cursor on the laptop screen, enhancing user interaction and precision for tasks such as navigation, selection, and editing</rdfs:comment>
+        <rdfs:label xml:lang="en">Mouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem">
+        <rdfs:label xml:lang="en">Operating System</rdfs:label>
+        <rdfs:label xml:lang="en">Represents the software that manages hardware and software resources, providing services for computer programs.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port">
+        <rdfs:comment xml:lang="en">Represents the different physical connectors on the laptop that enable interaction with external devices and networks, facilitating data transfer, communication, and peripheral connectivity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Port</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security"/>
+        <rdfs:comment xml:lang="en">Rapresent security features such as finger print reader, face recognition and webcam cover</rdfs:comment>
+        <rdfs:label xml:lang="en">Protection Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the volatile memory used by the laptop to store data and applications temporarily during operation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ram (Random-access-memory)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security">
+        <rdfs:comment xml:lang="en">Represents the various features and mechanisms implemented to safeguard the laptop’s data and manage access</rdfs:comment>
+        <rdfs:label xml:lang="en">Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the laptop&apos;s storage solutions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Storage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents the input device on the laptop that allows users to control the cursor and perform gestures through touch.</rdfs:comment>
+        <rdfs:label xml:lang="en">TrackPad</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port"/>
+        <rdfs:comment xml:lang="en">Rapresent the Universal serial bus ports</rdfs:comment>
+        <rdfs:label xml:lang="en">Usb</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+        <rdfs:comment xml:lang="en">Represents an integrated  camera that captures video and images.</rdfs:comment>
+        <rdfs:label xml:lang="en">Webcam</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>8192MB</LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeonPro5500M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeonPro5500M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>8192MB</LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProArt_DisplayPA247CV"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGFalchionAsus"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGHarpe"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAudioSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HarmanKardon"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBattery rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AsusZenbookBattery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColour rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NaturalSilver"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NoctuaNH-D15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasGuarantee rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Standard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeonPro5500M"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#BacklitChicletKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FHDcamera"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei9"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#KeyTravel"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#LPDDR4X"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ZenBookS14SSD1TB"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#14LuminaOLED"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows11"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi1_4"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeB"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Fingerprint_Reader"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Malwarebytes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AVG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AVG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>2023.8.9 V</LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicKeyBoard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicKeyBoard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Bluetooth</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>QWERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicMouse2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicMouse2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Mouse"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Wireless</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleStudioDisplay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleStudioDisplay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>USB-C</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>5120x2880</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AsusZenbookBattery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AsusZenbookBattery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>72.0W</LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Avast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Avast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>2024.1v</LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#BacklitChicletKeyboard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#BacklitChicletKeyboard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>QWERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolerMasterHyper212EVO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolerMasterHyper212EVO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <LaptopConfigModellazione:hasCoolingSystemType>Air Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DDR4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DDR4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>16GB</LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DolbyAtmosAudioSystem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DolbyAtmosAudioSystem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAudioSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>20.0W</LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Extended -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Extended">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsGuaranteeOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasGuaranteePeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</LaptopConfiguratorModellazioneGestioneConoscenza:HasGuaranteePeriod>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FHDcamera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FHDcamera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>HD a 1080p</LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceRecognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceRecognition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsSecurityOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>Biometric Face scanner</LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceTimeHD1080p -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceTimeHD1080p">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>HD a 1080p</LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Fingerprint_Reader -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Fingerprint_Reader">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsSecurityOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>Biometric Finger print scanner</LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPZ3700"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilion200UsbKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAudioSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#B&amp;O"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBattery rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilionBattery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColour rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ScandinavianWhite"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NZXTKrakenX63"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasGuarantee rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Standard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DDR4"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPWideVision720pHD"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpImagePad"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpNaturalSilverKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelArcGraphics"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei7"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Pavilion15SSD1TB"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#15_6FHD"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows10"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_0"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeC"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Avast"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam_cover"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Hdmi 1.4</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>1920 x 1080</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPWideVision720pHD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPWideVision720pHD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>HD a 720p</LaptopConfiguratorModellazioneGestioneConoscenza:HasWebcamResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPZ3700 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPZ3700">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Mouse"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Wireless</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HarmanKardon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HarmanKardon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAudioSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>30.0W</LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi1_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi1_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>1.4v</LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>2.0v</LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>2.1v</LaptopConfiguratorModellazioneGestioneConoscenza:HasHdmiVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpImagePad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpImagePad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>11.5 cm x 6 cm</LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpNaturalSilverKeyboard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpNaturalSilverKeyboard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>QWERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilion200UsbKeyboard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilion200UsbKeyboard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>USB</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>QWERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilionBattery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HpPavilionBattery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>41.0W</LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelArcGraphics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelArcGraphics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>6144MB</LaptopConfiguratorModellazioneGestioneConoscenza:HasVideoMemory>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>3.6 Ghz</LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#IntelCorei9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>5.3 GHz</LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#KeyTravel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#KeyTravel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>10.5 cm x 7.3 cm</LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#LPDDR4X -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#LPDDR4X">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>32GB</LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#M3_8Core -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#M3_8Core">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>4.0 GHz</LaptopConfiguratorModellazioneGestioneConoscenza:HasCPUSpeed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBattery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBattery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Battery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>70W</LaptopConfiguratorModellazioneGestioneConoscenza:HasBatteryCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Laptop"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicKeyBoard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleMagicMouse2"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AppleStudioDisplay"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAudioSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#DolbyAtmosAudioSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasBattery rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBattery"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColour rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Silver"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolerMasterHyper212EVO"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasGuarantee rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Extended"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AMDRadeon"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceTimeHD1080p"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#M3_8Core"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookProSSD1TB"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MagicKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Retina13Inch"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TrackpadForceTouch"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasHardwareComponent rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#UnifiedMemory"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystem rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacOs"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Hdmi2_1"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasPort rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeC"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AVG"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasSecurity rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#FaceRecognition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookProSSD1TB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookProSSD1TB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>1TB</LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacOs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacOs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsOperativeSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>macOS Sequoia</LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MagicKeyboard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MagicKeyboard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>QWERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasKeyBoardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Malwarebytes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Malwarebytes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Antivirus"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>2024.1.2 V</LaptopConfiguratorModellazioneGestioneConoscenza:HasAntivirusVersion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NZXTKrakenX63 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NZXTKrakenX63">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <LaptopConfigModellazione:hasCoolingSystemType>Liquid Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NaturalSilver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NaturalSilver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>NaturalSilver</LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NoctuaNH-D15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NoctuaNH-D15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <LaptopConfigModellazione:hasCoolingSystemType>Air Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Pavilion15SSD1TB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Pavilion15SSD1TB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>1TB</LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProArt_DisplayPA247CV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProArt_DisplayPA247CV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>HDMI</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>1920 x 1080</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGFalchionAsus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGFalchionAsus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalKeyboard"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Bluetooth</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>AZERTY</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalKeyboardLayout>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGHarpe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ROGHarpe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Mouse"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Wireless</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Retina13Inch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Retina13Inch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>3024×1964</LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ScandinavianWhite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ScandinavianWhite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Silver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Silver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>Silver</LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Standard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Standard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Guarantee"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsGuaranteeOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsGuaranteeOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasGuaranteePeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</LaptopConfiguratorModellazioneGestioneConoscenza:HasGuaranteePeriod>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TrackpadForceTouch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TrackpadForceTouch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Trackpad"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>12cm x 8cm</LaptopConfiguratorModellazioneGestioneConoscenza:hasTrackpadDimensions>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasUsbType>USB-B</LaptopConfiguratorModellazioneGestioneConoscenza:HasUsbType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#TypeC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Usb"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasUsbType>USB-C</LaptopConfiguratorModellazioneGestioneConoscenza:HasUsbType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#UnifiedMemory -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#UnifiedMemory">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#MacBookPro"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>16GB</LaptopConfiguratorModellazioneGestioneConoscenza:HasRAMSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam_cover -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam_cover">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ProtectionFeature"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsSecurityOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>Mechanical cover to webcam</LaptopConfiguratorModellazioneGestioneConoscenza:HasProtectionFeatureType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsOperativeSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>Windows 10 22H2</LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Windows11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#OperatingSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsOperativeSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>Windows 11 Home</LaptopConfiguratorModellazioneGestioneConoscenza:HasOperatingSystemEdition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ZenBookS14SSD1TB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ZenBookS14SSD1TB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>1TB</LaptopConfiguratorModellazioneGestioneConoscenza:HasStorageCapacity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#14LuminaOLED -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#14LuminaOLED">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ASUSZenbookS14"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>1920 x 1080</LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#15_6FHD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#15_6FHD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsHardwareComponentOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>1920 x 1080</LaptopConfiguratorModellazioneGestioneConoscenza:HasDisplayResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#B&amp;O -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#B&amp;O">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#AudioSystem"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAudioSystemOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>15.0W</LaptopConfiguratorModellazioneGestioneConoscenza:HasOutputPower>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Accessory"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HardwareComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Port"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Security"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Cpu"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Display"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#GraphicsCard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Keyboard"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Ram"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Storage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Webcam"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
