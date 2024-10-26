@@ -1,25 +1,51 @@
 package org.example.configurator;
 
-public class Antivirus {
+public class Antivirus extends Security {
 
-    private String HasAntivirusVersion;
+    private String antivirusVersion;
 
-    // Costruttore di default
-    public Antivirus() {
+
+    public Antivirus(Laptop laptopOfSecurity, String antivirusVersion) {
+        super(laptopOfSecurity);
+        this.antivirusVersion = antivirusVersion;
     }
 
-    public String getHasantivirusversion() {
-        return HasAntivirusVersion;
+    /**
+     * Clones the Antivirus object
+     * @param laptop the laptop to which the Antivirus object is associated
+     * @return a new Antivirus object
+     */
+
+    @Override
+    public Security clone(Laptop laptop) {
+        return new Antivirus(laptop, this.antivirusVersion);
     }
 
-    public void setHasantivirusversion(String HasAntivirusVersion) {
-        this.HasAntivirusVersion = HasAntivirusVersion;
+    /**
+     * Get the version of the antivirus
+     * @return the version of the antivirus
+     */
+    public String getAntivirusVersion() {
+        return antivirusVersion;
     }
 
+    /**
+     * Set the version of the antivirus
+     * @param antivirusVersion the version of the antivirus
+     */
+    public void setAntivirusVersion(String antivirusVersion) {
+        this.antivirusVersion = antivirusVersion;
+    }
+
+    /**
+     *
+     * @return a string representation of the Antivirus object
+     */
     @Override
     public String toString() {
         return "Antivirus{" +
-               "HasAntivirusVersion='" + HasAntivirusVersion + '\'' + " " +
-               '}';
+                "laptopOfAntivirus=" + getLaptopOfSecurity() +
+                ", antivirusVersion='" + antivirusVersion + '\'' +
+                '}';
     }
 }
