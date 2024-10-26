@@ -2,11 +2,32 @@ package org.example.configurator;
 
 public class Port {
 
-    // Aggiungere attributi corrispondenti alle proprietà dell'ontologia
+    /**
+     * Represents a port on a laptop.
+     */
+    private Laptop laptopOfPort;
 
-    public Port() {
-        // Costruttore di default
+    /**
+     * Constructs a Port with the specified laptop
+     * @param laptopOfPort the laptop to which the port is associated
+     */
+    public Port(Laptop laptopOfPort) {
+        this.laptopOfPort = laptopOfPort;
     }
 
-    // Aggiungere metodi getter e setter
+    /**
+     *
+     * @return the laptop to which the port is associated
+     */
+    public Laptop getLaptopOfPort() {
+        return laptopOfPort;
+    }
+
+    /**
+     *
+     * @param laptopOfPort the laptop to which the port is associated
+     */
+    public void setLaptopOfPort(Laptop laptopOfPort) {
+        this.laptopOfPort = laptopOfPort;
+    }
 }

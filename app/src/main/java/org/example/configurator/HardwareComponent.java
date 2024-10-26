@@ -1,12 +1,44 @@
 package org.example.configurator;
 
-public class HardwareComponent {
+/**
+ * Abstract class representing a hardware component of a laptop
+ */
+public abstract class HardwareComponent {
 
-    // Aggiungere attributi corrispondenti alle proprietà dell'ontologia
+    private Laptop laptopOfHardwareComponent;
 
-    public HardwareComponent() {
-        // Costruttore di default
+    /**
+     * constructor to associate the hardware component with a specific laptop
+     * @param laptopOfHardwareComponent the laptop to which the hardware component is associated
+     */
+    public HardwareComponent(Laptop laptopOfHardwareComponent) {
+        this.laptopOfHardwareComponent = laptopOfHardwareComponent;
     }
 
-    // Aggiungere metodi getter e setter
+    /**
+     * Default constructor for creating a hardware component
+     */
+    public HardwareComponent() {}
+
+    /**
+     * @return the laptop to which the hardware component is associated
+     */
+    public Laptop getLaptopOfHardwareComponent () {
+        return laptopOfHardwareComponent;
+    }
+
+    /**
+     * sets the laptop to which the hardware component is associated
+     * @param laptopOfHardwareComponent the laptop to which the hardware component is associated
+     */
+    public void setLaptopOfHardwareComponent (Laptop laptopOfHardwareComponent) {
+        this.laptopOfHardwareComponent = laptopOfHardwareComponent;
+    }
+
+    /** abstract method to clone the hardware component
+     * @return a new hardware component instance with the same attributes of the original one
+     */
+    @Override
+    public abstract HardwareComponent clone();
 }
+

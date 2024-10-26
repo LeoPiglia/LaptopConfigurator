@@ -2,11 +2,24 @@ package org.example.configurator;
 
 public class Antivirus {
 
-    // Aggiungere attributi corrispondenti alle proprietà dell'ontologia
+    private String HasAntivirusVersion;
 
+    // Costruttore di default
     public Antivirus() {
-        // Costruttore di default
     }
 
-    // Aggiungere metodi getter e setter
+    public String getHasantivirusversion() {
+        return HasAntivirusVersion;
+    }
+
+    public void setHasantivirusversion(String HasAntivirusVersion) {
+        this.HasAntivirusVersion = HasAntivirusVersion;
+    }
+
+    @Override
+    public String toString() {
+        return "Antivirus{" +
+               "HasAntivirusVersion='" + HasAntivirusVersion + '\'' + " " +
+               '}';
+    }
 }
