@@ -6,7 +6,6 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:LaptopConfigModellazione="http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#"
      xmlns:LaptopConfiguratorModellazioneGestioneConoscenza="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza">
         <rdfs:comment xml:lang="en">This ontology defines the structure and relationships of laptop components, including hardware, peripherals, and features. It provides a framework for understanding various elements such as the CPU, GPU, display, keyboard, and ports, facilitating knowledge sharing about laptop configurations and functionalities.</rdfs:comment>
@@ -224,18 +223,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#hasCoolingSystemType -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#hasCoolingSystemType">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">This data property specifies the type of cooling system used in the laptop.</rdfs:comment>
-        <rdfs:label xml:lang="en">HasCoolingSystemType</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAntivirusVersion -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasAntivirusVersion">
@@ -291,6 +278,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">This data properties, rapresent the connection type of accessory or other device with the laptop</rdfs:comment>
         <rdfs:label xml:lang="en">HasConnectionType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemTyoe -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemTyoe">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This data properties rapresent the type of cooling system used in the laptop</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Cooling System Type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -866,7 +865,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolerMasterHyper212EVO">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfigModellazione:hasCoolingSystemType>Air Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
     </owl:NamedIndividual>
     
 
@@ -974,7 +973,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ExternalMonitor"/>
-        <LaptopConfiguratorModellazioneGestioneConoscenza:HasAccessory rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPV27i"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:IsAccessoryOf rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HPPavilion15"/>
         <LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>Hdmi 1.4</LaptopConfiguratorModellazioneGestioneConoscenza:HasConnectionType>
         <LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>1920 x 1080</LaptopConfiguratorModellazioneGestioneConoscenza:HasExternalMonitorResolution>
     </owl:NamedIndividual>
@@ -1219,7 +1218,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NZXTKrakenX63">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfigModellazione:hasCoolingSystemType>Liquid Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Liquid Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
     </owl:NamedIndividual>
     
 
@@ -1237,7 +1236,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NoctuaNH-D15">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfigModellazione:hasCoolingSystemType>Air Cooling</LaptopConfigModellazione:hasCoolingSystemType>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
     </owl:NamedIndividual>
     
 
