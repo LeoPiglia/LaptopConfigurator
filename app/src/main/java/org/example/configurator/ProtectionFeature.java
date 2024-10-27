@@ -3,15 +3,17 @@ package org.example.configurator;
 public class ProtectionFeature extends Security {
 
     private String protectionFeatureType;
+    private String protectionFeatureName;
 
     /**
      * Costruisce un oggetto ProtectionFeature con il laptop specificato e il tipo di protezione
      * @param laptopOfSecurity il laptop a cui l'oggetto ProtectionFeature è associato
      * @param protectionFeatureType il tipo di protezione dell'oggetto ProtectionFeature
      */
-    public ProtectionFeature(Laptop laptopOfSecurity, String protectionFeatureType) {
+    public ProtectionFeature(Laptop laptopOfSecurity, String protectionFeatureType, String protectionFeatureName) {
         super(laptopOfSecurity);
         this.protectionFeatureType = protectionFeatureType;
+        this.protectionFeatureName = protectionFeatureName;
     }
 
     /**
@@ -22,7 +24,7 @@ public class ProtectionFeature extends Security {
 
     @Override
     public Security clone(Laptop laptop) {
-        return new ProtectionFeature(laptop, this.protectionFeatureType);
+        return new ProtectionFeature(laptop, this.protectionFeatureType, this.protectionFeatureName);
     }
 
     /**
@@ -44,6 +46,24 @@ public class ProtectionFeature extends Security {
     }
 
     /**
+     * Restituisce il nome della protezione
+     * @return il nome della protezione
+     */
+
+    public String getProtectionFeatureName() {
+        return protectionFeatureName;
+    }
+
+    /**
+     * Imposta il nome della protezione
+     * @param protectionFeatureName il nome della protezione
+     */
+
+    public void setProtectionFeatureName(String protectionFeatureName) {
+        this.protectionFeatureName = protectionFeatureName;
+    }
+
+    /**
      * Restituisce una rappresentazione in stringa dell'oggetto ProtectionFeature
      * @return una rappresentazione in stringa dell'oggetto ProtectionFeature
      */
@@ -51,7 +71,7 @@ public class ProtectionFeature extends Security {
     @Override
     public String toString() {
         return "ProtectionFeature{" +
-                "laptopOfProtectionFeature=" + getLaptopOfSecurity() +
+                ", protectionFeatureName='" + protectionFeatureName +
                 ", protectionFeatureType='" + protectionFeatureType + '\'' +
                 '}';
     }
