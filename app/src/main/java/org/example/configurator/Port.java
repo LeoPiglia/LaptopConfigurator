@@ -30,4 +30,24 @@ public class Port {
     public void setLaptopOfPort(Laptop laptopOfPort) {
         this.laptopOfPort = laptopOfPort;
     }
+
+    /**
+     * Clones the Port object
+     * @return a new Port object
+     */
+
+    public Port clone(Laptop laptop) {
+        return new Port(this.laptopOfPort);
+    }
+
+    /**
+     *
+     * @return the laptop to which the Port object is associated
+     */
+
+    public String toString() {
+        return "Port{" +
+                "laptopOfPort=" + laptopOfPort +
+                '}';
+    }
 }
