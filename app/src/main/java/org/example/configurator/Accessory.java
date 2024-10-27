@@ -23,6 +23,7 @@ public class Accessory {
      * @return a new accessory object with the same attributes of the original one
      */
 
+
     public Accessory clone(Laptop laptop) {
         return new Accessory(this.AccessoryOfLaptop, this.ConnectionType);
     }
