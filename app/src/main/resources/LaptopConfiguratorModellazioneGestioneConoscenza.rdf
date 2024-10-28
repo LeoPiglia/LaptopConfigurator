@@ -282,9 +282,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemTyoe -->
+    <!-- http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemTyoe">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#HasCoolingSystemType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -865,7 +865,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolerMasterHyper212EVO">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>
     </owl:NamedIndividual>
     
 
@@ -1218,7 +1218,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NZXTKrakenX63">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Liquid Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>Liquid Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>
     </owl:NamedIndividual>
     
 
@@ -1236,7 +1236,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#NoctuaNH-D15">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#CoolingSystem"/>
-        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemTyoe>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>Air Cooling</LaptopConfiguratorModellazioneGestioneConoscenza:HasCoolingSystemType>
     </owl:NamedIndividual>
     
 
@@ -1297,6 +1297,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#ScandinavianWhite">
         <rdf:type rdf:resource="http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#Colour"/>
+        <LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>Scandinavian White</LaptopConfiguratorModellazioneGestioneConoscenza:HasColourName>
     </owl:NamedIndividual>
     
 
