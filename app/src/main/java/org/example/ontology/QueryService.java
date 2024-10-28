@@ -16,56 +16,7 @@ public class QueryService {
     }
 
     /**
-     * Retrieves the RAM components for the specified laptop.
-     */
-
-    public List<Ram> getRAMComponents(Laptop laptop) {
-        List<Ram> ramList = new ArrayList<>();
-
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
-                "SELECT ?ram ?size WHERE { " +
-                "?ram rdf:type laptop:RAM . " +
-                "?ram laptop:hasRAMSize ?size . " +
-                "}";
-
-        ResultSet results = queryExecutor.executeQuery(sparqlQuery);
-        while (results != null && results.hasNext()) {
-            QuerySolution solution = results.nextSolution();
-            Resource ramResource = solution.getResource("ram");
-            String ramName = ramResource.getLocalName();
-            String ramSize = solution.getLiteral("size").getString();
-            ramList.add(new Ram(laptop, ramName, ramSize));
-        }
-        return ramList;
-    }
-
-    /**
-     * Retrieves the storage components for the specified laptop.
-     */
-    public List<Storage> getStorageComponents(Laptop laptop) {
-        List<Storage> storageList = new ArrayList<>();
-
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
-                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
-                "SELECT ?storage ?capacity WHERE { " +
-                "?storage rdf:type laptop:Storage . " +
-                "?storage laptop:hasStorageCapacity ?capacity . " +
-                "}";
-
-        ResultSet results = queryExecutor.executeQuery(sparqlQuery);
-        while (results != null && results.hasNext()) {
-            QuerySolution solution = results.nextSolution();
-            Resource storageResource = solution.getResource("storage");
-            String storageName = storageResource.getLocalName();
-            String storageCapacity = solution.getLiteral("capacity").getString();
-            storageList.add(new Storage(laptop, storageName, storageCapacity));
-        }
-        return storageList;
-    }
-
-    /**
-     * retireves the antivirus version for the specified laptop
+     * retireves the antivirus version available for the specified laptop
      */
     public List<Antivirus> getAntivirusComponents(Laptop laptop) {
         List<Antivirus> antivirusList = new ArrayList<>();
@@ -74,7 +25,7 @@ public class QueryService {
                 "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
                 "SELECT ?antivirus ?version WHERE { " +
                 "?antivirus rdf:type laptop:Antivirus . " +
-                "?antivirus laptop:hasAntivirusVersion ?version . " +
+                "?antivirus laptop:HasAntivirusVersion ?version . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -98,7 +49,7 @@ public class QueryService {
                 "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
                 "SELECT ?battery ?capacity WHERE { " +
                 "?battery rdf:type laptop:Battery . " +
-                "?battery laptop:hasBatteryCapacity ?capacity . " +
+                "?battery laptop:HasBatteryCapacity ?capacity . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -116,10 +67,11 @@ public class QueryService {
     public List<Colour> getColourComponents(Laptop laptop) {
         List<Colour> colourList = new ArrayList<>();
 
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX laptop: <http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#> " +
-                "SELECT ?colour WHERE { " +
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
+                "SELECT ?colour ?name WHERE { " +
                 "?colour rdf:type laptop:Colour . " +
+                "?colour laptop:HasColourName ?name . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -135,11 +87,11 @@ public class QueryService {
     public List<CoolingSystem> getCoolingSystemComponents(Laptop laptop) {
         List<CoolingSystem> coolingSystemList = new ArrayList<>();
 
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX laptop: <http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#> " +
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
                 "SELECT ?coolingSystem ?type WHERE { " +
                 "?coolingSystem rdf:type laptop:CoolingSystem . " +
-                "?coolingSystem laptop:hasCoolingSystemType ?type . " +
+                "?coolingSystem laptop:HasCoolingSystemType ?type . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -156,11 +108,11 @@ public class QueryService {
     public List<Cpu> getCPUComponents(Laptop laptop) {
         List<Cpu> cpuList = new ArrayList<>();
 
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX laptop: <http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#> " +
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
                 "SELECT ?cpu ?speed WHERE { " +
-                "?cpu rdf:type laptop:CPU . " +
-                "?cpu laptop:hasCPUSpeed ?speed . " +
+                "?cpu rdf:type laptop:Cpu . " +
+                "?cpu laptop:HasCPUSpeed ?speed . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -177,11 +129,11 @@ public class QueryService {
     public List<Display> getDisplayComponents(Laptop laptop) {
         List<Display> displayList = new ArrayList<>();
 
-        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX laptop: <http://www.semanticweb.org/fabio/ontologies/2024/7/LaptopConfigModellazione#> " +
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
                 "SELECT ?display ?resolution WHERE { " +
                 "?display rdf:type laptop:Display . " +
-                "?display laptop:hasDisplayResolution ?resolution . " +
+                "?display laptop:HasDisplayResolution ?resolution . " +
                 "}";
 
         ResultSet results = queryExecutor.executeQuery(sparqlQuery);
@@ -195,7 +147,49 @@ public class QueryService {
         return displayList;
     }
 
+    public List<ExternalKeyboard> getExternalKeyboardComponents(Laptop laptop) {
+        List<ExternalKeyboard> externalKeyboardList = new ArrayList<>();
 
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
+                "SELECT ?externalKeyboard ?layout ?connectionType WHERE { " +
+                "?externalKeyboard rdf:type laptop:ExternalKeyboard . " +
+                "?externalKeyboard laptop:HasExternalKeyboardLayout ?layout . " +
+                "?externalKeyboard laptop:HasConnectionType ?connectionType . " +
+                "}";
 
+        ResultSet results = queryExecutor.executeQuery(sparqlQuery);
+        while (results != null && results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            Resource externalKeyboardResource = solution.getResource("externalKeyboard");
+            String name = externalKeyboardResource.getLocalName();
+            String layout = solution.getLiteral("layout").getString();
+            String connectionType = solution.getLiteral("connectionType").getString();
+            externalKeyboardList.add(new ExternalKeyboard(laptop, name, layout, connectionType));
+        }
+        return externalKeyboardList;
+    }
 
+    public List<ExternalMonitor> getExternalMonitorComponents(Laptop laptop) {
+        List<ExternalMonitor> externalMonitorList = new ArrayList<>();
+
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
+                "SELECT ?externalMonitor ?resolution ?connectionType WHERE { " +
+                "?externalMonitor rdf:type laptop:ExternalMonitor . " +
+                "?externalMonitor laptop:HasExternalMonitorResolution ?resolution . " +
+                "?externalMonitor laptop:HasConnectionType ?connectionType . " +
+                "}";
+
+        ResultSet results = queryExecutor.executeQuery(sparqlQuery);
+        while (results != null && results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            Resource externalMonitorResource = solution.getResource("externalMonitor");
+            String name = externalMonitorResource.getLocalName();
+            String resolution = solution.getLiteral("resolution").getString();
+            String connectionType = solution.getLiteral("connectionType").getString();
+            externalMonitorList.add(new ExternalMonitor(laptop, name, resolution, connectionType));
+        }
+        return externalMonitorList;
+    }
 }
