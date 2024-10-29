@@ -27,6 +27,9 @@ dependencies {
     implementation 'org.apache.jena:jena-shex:4.8.0'
     implementation 'org.apache.jena:jena-rdfconnection:4.8.0'
 
+    // Dipendenza per Mockito
+    testImplementation 'org.mockito:mockito-core:4.5.1'
+
     // Pellet for inference
     implementation 'com.github.galigator.openllet:openllet-core:2.6.4'
     implementation 'com.github.galigator.openllet:openllet-jena:2.6.4'
@@ -41,8 +44,9 @@ dependencies {
     implementation "org.openjfx:javafx-graphics:20.0.2:win"
 
     // Dependencies for testing
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // Dipendenza per JUnit
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'org.testng:testng:7.1.0'// per JUnit 5
 
 }
 
@@ -54,7 +58,7 @@ java {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnit()
 }
 
 application {

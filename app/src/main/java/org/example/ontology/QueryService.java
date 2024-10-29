@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryService {
-    private SPARQLQueryExecutor queryExecutor;
+    private static SPARQLQueryExecutor queryExecutor;
 
     public QueryService(SPARQLQueryExecutor queryExecutor) {
         this.queryExecutor = queryExecutor;
@@ -318,7 +318,7 @@ public class QueryService {
         return protectionFeatureList;
     }
 
-    public List <Ram> getRamComponents(Laptop laptop){
+    public static List <Ram> getRamComponents(Laptop laptop){
         List<Ram> ramList = new ArrayList<>();
 
         String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
