@@ -443,4 +443,25 @@ public class QueryService {
         }
         return webcamList;
     }
+
+    public List<Mouse> getMouseComponents (Laptop laptop){
+        List<Mouse> mouseList = new ArrayList<>();
+
+        String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+                "PREFIX laptop: <http://www.semanticweb.org/leona/ontologies/2024/9/LaptopConfiguratorModellazioneGestioneConoscenza#>" +
+                "SELECT ?mouse ?connectionType WHERE { " +
+                "?mouse rdf:type laptop:Mouse . " +
+                "?mouse laptop:HasConnectionType ?connectionType . " +
+                "}";
+
+        ResultSet results = queryExecutor.executeQuery(sparqlQuery);
+        while (results != null && results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            Resource mouseResource = solution.getResource("mouse");
+            String name = mouseResource.getLocalName();
+            String type = solution.getLiteral("type").getString();
+            mouseList.add(new Mouse(laptop, name, type));
+        }
+        return mouseList;
+    }
 }
