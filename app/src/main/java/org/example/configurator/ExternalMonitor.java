@@ -14,7 +14,7 @@ public class ExternalMonitor extends Accessory {
      * @param externalMonitorResolution the resolution of the external monitor
      */
 
-    private ExternalMonitor (Laptop AccessoryOfLaptop, String ConnectionType, String externalMonitorName, String externalMonitorResolution) {
+    public ExternalMonitor (Laptop AccessoryOfLaptop, String ConnectionType, String externalMonitorName, String externalMonitorResolution) {
         super(AccessoryOfLaptop, ConnectionType);
         this.externalMonitorName = externalMonitorName;
         this.externalMonitorResolution = externalMonitorResolution;
