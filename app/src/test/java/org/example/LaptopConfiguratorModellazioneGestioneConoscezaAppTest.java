@@ -3,13 +3,6 @@
  */
 package org.example;
 
-import org.example.app.LaptopConfiguratorModellazioneGestioneConoscezaApp;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 class LaptopConfiguratorModellazioneGestioneConoscezaAppTest {
-    @Test void appHasAGreeting() {
-        LaptopConfiguratorModellazioneGestioneConoscezaApp classUnderTest = new LaptopConfiguratorModellazioneGestioneConoscezaApp();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
+
 }

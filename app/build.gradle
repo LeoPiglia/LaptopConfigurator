@@ -10,6 +10,9 @@ plugins {
     id 'application'
 }
 
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -38,10 +41,10 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:2.0.0'
 
     // JavaFX dependencies for Windows
-    implementation "org.openjfx:javafx-controls:17:win"
-    implementation "org.openjfx:javafx-fxml:17:win"
-    implementation "org.openjfx:javafx-base:17:win"
-    implementation "org.openjfx:javafx-graphics:17:win"
+    implementation "org.openjfx:javafx-controls:20.0.2:win"
+    implementation "org.openjfx:javafx-fxml:20.0.2:win"
+    implementation "org.openjfx:javafx-base:20.0.2:win"
+    implementation "org.openjfx:javafx-graphics:20.0.2:win"
 
     // Dependencies for testing
     // Dipendenza per JUnit
@@ -61,19 +64,33 @@ test {
     useJUnit()
 }
 
+/**
+ * Specifies the main class for execution.
+ * The 'mainClass' property points to the entry point of the Java application.
+ */
 application {
     mainClass = 'org.example.app.LaptopConfiguratorModellazioneGestioneConoscezaApp'
     applicationDefaultJvmArgs = [
-            '--module-path', 'C:\\Users\\leona\\Downloads\\javafx-sdk-17.0.13',
-            '--add-modules', 'javafx.controls,javafx.fxml'
+            "--module-path", 'C:\\ProgramData\\JavaFX\\javafx-sdk-22.0.2\\lib',
+            "--add-modules", "javafx.controls,javafx.fxml"
     ]
 }
+
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
 
+tasks.named('run', JavaExec) {
+    standardInput = System.in
+}
+
+
+/**
+ * Enables interactivity when running the application with 'gradle run'.
+ * This ensures that standard input is properly handled.
+ */
 tasks.named('run', JavaExec) {
     standardInput = System.in
 }
