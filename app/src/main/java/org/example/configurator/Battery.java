@@ -7,7 +7,7 @@ public class Battery {
 
     private Laptop batteryOfLaptop;
     private String batteryName;
-    private double batteryCapacity;
+    private String batteryCapacity;
 
     /**
      * Constructor to create a Battery object with a specified laptop, name, and capacity.
@@ -16,7 +16,7 @@ public class Battery {
      * @param batteryName     The name of the battery.
      * @param batteryCapacity The capacity of the battery (mAh).
      */
-    public Battery(Laptop batteryOfLaptop, String batteryName, double batteryCapacity) {
+    public Battery(Laptop batteryOfLaptop, String batteryName, String batteryCapacity) {
         this.batteryOfLaptop = batteryOfLaptop;
         this.batteryName = batteryName;
         this.batteryCapacity = batteryCapacity;
@@ -37,8 +37,9 @@ public class Battery {
      *
      * @return The capacity of the battery in mAh.
      */
-    public double getBatteryCapacity() {
-        return batteryCapacity;
+    public String getBatteryCapacity() {
+
+        return batteryCapacity.toString();
     }
 
     /**
@@ -46,7 +47,7 @@ public class Battery {
      *
      * @param batteryCapacity The new capacity of the battery in mAh.
      */
-    public void setBatteryCapacity(double batteryCapacity) {
+    public void setBatteryCapacity(String batteryCapacity) {
         this.batteryCapacity = batteryCapacity;
     }
 

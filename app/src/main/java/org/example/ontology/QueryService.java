@@ -33,8 +33,8 @@ public class QueryService {
             QuerySolution solution = results.nextSolution();
             Resource antivirusResource = solution.getResource("antivirus");
             String antivirusName = antivirusResource.getLocalName();
-            String antivirusVersion = solution.getLiteral("version").getString();
-            antivirusList.add(new Antivirus(laptop, antivirusName, antivirusVersion));
+            String version = solution.getLiteral("version").getString();
+            antivirusList.add(new Antivirus(laptop, antivirusName, version));
         }
         return antivirusList;
     }
@@ -57,7 +57,7 @@ public class QueryService {
             QuerySolution solution = results.nextSolution();
             Resource batteryResource = solution.getResource("battery");
             String name = batteryResource.getLocalName();
-            double capacity = solution.getLiteral("capacity").getDouble();
+            String capacity = solution.getLiteral("capacity").getString();
             batteryList.add(new Battery(laptop, name, capacity));
         }
         return batteryList;
@@ -270,7 +270,7 @@ public class QueryService {
             QuerySolution solution = results.nextSolution();
             Resource operatingSystemResource = solution.getResource("operatingSystem");
             String name = operatingSystemResource.getLocalName();
-            String edition = solution.getLiteral("name").getString();
+            String edition = solution.getLiteral("edition").getString();
             operatingSystemList.add(new OperatingSystem(laptop, name, edition));
         }
         return operatingSystemList;
@@ -459,8 +459,8 @@ public class QueryService {
             QuerySolution solution = results.nextSolution();
             Resource mouseResource = solution.getResource("mouse");
             String name = mouseResource.getLocalName();
-            String type = solution.getLiteral("type").getString();
-            mouseList.add(new Mouse(laptop, name, type));
+            String connectionType = solution.getLiteral("connectionType").getString();
+            mouseList.add(new Mouse(laptop, name, connectionType));
         }
         return mouseList;
     }
