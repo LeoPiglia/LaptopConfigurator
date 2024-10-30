@@ -46,8 +46,6 @@ public class Port {
      */
 
     public String toString() {
-        return "Port{" +
-                "laptopOfPort=" + laptopOfPort +
-                '}';
+        return laptopOfPort.toString();
     }
 }

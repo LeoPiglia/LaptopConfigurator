@@ -45,12 +45,12 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             layout.setPadding(new Insets(20, 20, 20, 20));
             layout.setStyle("-fx-background-color: #f0f0f0;"); // Background color
 
-            Label welcomeLabel = new Label("Welcome to the laptop configurator!");
+            Label welcomeLabel = new Label("Laptop Configurator");
             welcomeLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
 
 
             ComboBox<String> componentSelector = new ComboBox<>();
-            componentSelector.getItems().addAll("Processor", "Memory", "Storage", "Graphics Card", "Display", "Battery", "Operating System", "Audio System", "Cooling System", "Colour", "Guarantee", "Security", "Accessory");
+            componentSelector.getItems().addAll( "Hardware Component" ,"Battery", "Port","Operating System", "Audio System", "Cooling System", "Colour", "Guarantee", "Security", "Accessory");
             componentSelector.setPromptText("Select a component");
             componentSelector.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;");
 
@@ -446,11 +446,13 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
     private void configureHardwareComponent() {
         List<String> hardwareComponentOptions = new ArrayList<>();
-        hardwareComponentOptions.add("Motherboard");
-        hardwareComponentOptions.add("Processor");
-        hardwareComponentOptions.add("Memory");
-        hardwareComponentOptions.add("Storage");
         hardwareComponentOptions.add("Graphics Card");
+        hardwareComponentOptions.add("Cpu");
+        hardwareComponentOptions.add("Keyboard");
+        hardwareComponentOptions.add("Ram");
+        hardwareComponentOptions.add("Storage");
+        hardwareComponentOptions.add("Trackpad");
+        hardwareComponentOptions.add("Webcam");
         hardwareComponentOptions.add("Display");
 
         ChoiceDialog<String> hardwareComponentDialog = new ChoiceDialog<>(hardwareComponentOptions.get(0), hardwareComponentOptions);
@@ -466,7 +468,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
                 case "Display":
                     configureDisplay();
                     break;
-                    case "Graphics Card":
+                case "Graphics Card":
                     configureGraphicsCard();
                     break;
                 case "Keyboard":
@@ -626,8 +628,9 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         });
     }
 
-    private void showFinalConfiguration() {
 
+        // Security
+        private void showFinalConfiguration() {
             StringBuilder configuration = new StringBuilder();
             configuration.append("Final Configuration:\n");
             configuration.append("Audio System: ").append(laptop.getAudioSystem()).append("\n");
@@ -640,7 +643,6 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             configuration.append("Accessories: ").append(laptop.getAccessories()).append("\n");
             configuration.append("Ports: ").append(laptop.getPorts()).append("\n");
             configuration.append("Hardware Components: ").append(laptop.getHardwareComponents()).append("\n");
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Final Configuration");
             alert.setHeaderText(null);
@@ -649,23 +651,22 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         }
 
 
+        // Helper methods for showing alerts
+        private void showError (String message){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText(message);
+            alert.showAndWait();
+        }
 
-    // Helper methods for showing alerts
-    private void showError(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+        private void showSuccess (String message){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setContentText(message);
+            alert.showAndWait();
+        }
 
-    private void showSuccess(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setContentText(message);
-        alert.showAndWait();
+        public static void main (String[]args){
+            launch(args);
+        }
     }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}

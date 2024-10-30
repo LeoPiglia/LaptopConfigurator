@@ -34,10 +34,7 @@ public class Mouse extends Accessory {
      */
     @Override
     public String toString() {
-        return "Mouse{" +
-                "laptopOfMouse=" + getAccessoryOfLaptop() +
-                ", ConnectionType='" + getConnectionType() + '\'' +
-                '}';
+        return mouseName + " " + getConnectionType();
     }
 
 

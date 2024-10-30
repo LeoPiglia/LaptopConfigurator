@@ -54,8 +54,6 @@ public class Usb extends Port {
      */
     @Override
     public String toString() {
-        return "Usb{" +
-                "usbType='" + usbType + '\'' +
-                '}';
+        return usbType;
     }
 }

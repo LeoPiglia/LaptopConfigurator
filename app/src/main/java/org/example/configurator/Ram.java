@@ -67,10 +67,7 @@ public class Ram extends HardwareComponent {
      */
     @Override
     public String toString() {
-        return "Ram{" +
-                "ramName='" + ramName + '\'' +
-                ", ramSize='" + ramSize + '\'' +
-                '}';
+        return ramName + " " + ramSize;
     }
 
 

@@ -70,10 +70,7 @@ public class GraphicsCard extends HardwareComponent{
 
     @Override
     public String toString() {
-        return "GraphicsCard{" +
-                "graphicsCardName='" + graphicsCardName + '\'' +
-                ", graphicsCardVideoMemory='" + graphicsCardVideoMemory + '\'' +
-                '}';
+        return graphicsCardName + " " + graphicsCardVideoMemory;
     }
 
 

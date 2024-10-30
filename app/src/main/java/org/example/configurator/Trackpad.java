@@ -67,10 +67,7 @@ public class Trackpad extends HardwareComponent {
      */
     @Override
     public String toString() {
-        return "Trackpad{" +
-                "trackpadDimensions='" + trackpadDimensions + '\'' +
-                ", trackpadName='" + trackpadName + '\'' +
-                '}';
+        return trackpadName + " " + trackpadDimensions;
     }
 
 

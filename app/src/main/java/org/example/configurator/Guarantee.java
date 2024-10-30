@@ -89,7 +89,7 @@ public class Guarantee {
 
     @Override
     public String toString() {
-        return "Guarantee: " + guaranteeName + ", " + guaranteePeriod;
+        return "Guarantee: " + guaranteeName + ", " + guaranteePeriod + " years";
     }
 
 }

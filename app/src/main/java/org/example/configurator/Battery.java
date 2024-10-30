@@ -94,9 +94,6 @@ public class Battery {
      */
     @Override
     public String toString() {
-        return "Battery{" +
-                "batteryName='" + batteryName + '\'' +
-                ", batteryCapacity=" + batteryCapacity +
-                '}';
+        return batteryName + " (" + batteryCapacity + " mAh)";
     }
 }

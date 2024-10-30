@@ -65,10 +65,7 @@ public class ExternalKeyboard extends Accessory {
      */
     @Override
     public String toString() {
-        return "ExternalKeyboard{" +
-                "externalKeyboardName='" + externalKeyboardName + '\'' +
-                ", externalKeyboardLayout='" + externalKeyboardLayout + '\'' +
-                '}';
+        return externalKeyboardName + " " + externalKeyboardLayout + " " + getConnectionType();
     }
 
 

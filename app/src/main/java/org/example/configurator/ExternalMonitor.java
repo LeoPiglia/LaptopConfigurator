@@ -73,11 +73,7 @@ public class ExternalMonitor extends Accessory {
 
     @Override
     public String toString() {
-        return "ExternalMonitor{" +
-                "externalMonitorName='" + externalMonitorName + '\'' +
-                ", externalMonitorResolution='" + externalMonitorResolution + '\'' +
-                ", ConnectionType='" + this.getConnectionType() + '\'' +
-                '}';
+        return externalMonitorName + " " + externalMonitorResolution + " " + getConnectionType();
     }
 
 }

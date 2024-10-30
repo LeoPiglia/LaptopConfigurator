@@ -70,9 +70,6 @@ public class ProtectionFeature extends Security {
 
     @Override
     public String toString() {
-        return "ProtectionFeature{" +
-                ", protectionFeatureName='" + protectionFeatureName +
-                ", protectionFeatureType='" + protectionFeatureType + '\'' +
-                '}';
+        return protectionFeatureType;
     }
 }

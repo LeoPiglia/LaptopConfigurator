@@ -87,11 +87,9 @@ public class CoolingSystem {
      * @return the laptop to which the cooling system is associated
      */
 
+
+    @Override
     public String toString() {
-        return "CoolingSystem{" +
-                "laptopOfCoolingSystem=" + laptopOfCoolingSystem +
-                ", coolingSystemName='" + coolingSystemName + '\'' +
-                ", coolingSystemType='" + coolingSystemType + '\'' +
-                '}';
+        return coolingSystemName;
     }
 }

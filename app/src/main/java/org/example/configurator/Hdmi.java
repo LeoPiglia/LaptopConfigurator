@@ -56,8 +56,6 @@ public class Hdmi extends Port{
      * @return the laptop to which the Hdmi object is associated
      */
     public String toString() {
-        return "Hdmi{" +
-                "hdmiVersion='" + hdmiVersion + '\'' +
-                '}';
+        return hdmiVersion;
     }
 }

@@ -67,10 +67,7 @@ public class Storage extends HardwareComponent {
      */
     @Override
     public String toString() {
-        return "Storage{" +
-                "storageCapacity='" + storageCapacity + '\'' +
-                ", storageName='" + storageName + '\'' +
-                '}';
+        return storageName + " " + storageCapacity;
     }
 
 

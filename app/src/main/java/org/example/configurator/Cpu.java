@@ -71,7 +71,7 @@ public class Cpu extends HardwareComponent {
 
     @Override
     public String toString() {
-        return "CPU: " + cpuName + " " + cpuSpeed;
+        return cpuName + " " + cpuSpeed;
     }
 
 

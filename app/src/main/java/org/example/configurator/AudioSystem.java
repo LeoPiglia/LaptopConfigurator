@@ -15,10 +15,10 @@ public class AudioSystem {
      * @paam audioSystemName the name of the audio system
      * @param audioSystemPower the power of the audio system
      */
-    public AudioSystem(Laptop laptopOfAudioSystem, String audioSystemPower, String audioSystemName) {
+    public AudioSystem(Laptop laptopOfAudioSystem, String audioSystemName, String audioSystemPower) {
         this.laptopOfAudioSystem = laptopOfAudioSystem;
-        this.audioSystemPower = audioSystemPower;
         this.audioSystemName = audioSystemName;
+        this.audioSystemPower = audioSystemPower;
 
     }
 
@@ -28,7 +28,7 @@ public class AudioSystem {
      * @return a new AudioSystem object
      */
     public AudioSystem clone(Laptop laptop) {
-        return new AudioSystem(laptop, this.audioSystemPower, this.audioSystemName);
+        return new AudioSystem(laptop, this.audioSystemName, this.audioSystemPower);
     }
 
     /**
@@ -86,13 +86,10 @@ public class AudioSystem {
      *
      * @return a string representation of the AudioSystem object
      */
+
     @Override
     public String toString() {
-        return "AudioSystem{" +
-                "laptopOfAudioSystem=" + laptopOfAudioSystem +
-                ", audioSystemName='" + audioSystemName + '\'' +
-                ", audioSystemPower='" + audioSystemPower + '\'' +
-                '}';
-    }
+        return audioSystemName + " " + audioSystemPower;
 
+    }
 }

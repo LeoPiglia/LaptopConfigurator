@@ -69,10 +69,7 @@ public class Display extends HardwareComponent{
 
     @Override
     public String toString() {
-        return "Display{" +
-                "displayName='" + displayName + '\'' +
-                ", displayResolution='" + displayResolution + '\'' +
-                '}';
+        return displayName + " " + displayResolution;
     }
 
 

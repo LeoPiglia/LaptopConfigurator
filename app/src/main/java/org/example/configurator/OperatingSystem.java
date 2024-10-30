@@ -86,9 +86,6 @@ public class OperatingSystem {
 
     @Override
     public String toString() {
-        return "OperatingSystem{" +
-                ", operatingSystemName='" + operatingSystemName +
-                ", operatingSystemEdition='" + operatingSystemEdition + '\'' +
-                '}';
+        return operatingSystemEdition;
     }
 }

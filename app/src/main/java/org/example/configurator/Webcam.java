@@ -70,9 +70,6 @@ public class Webcam extends HardwareComponent {
      */
     @Override
     public String toString() {
-        return "Webcam{" +
-                "webcamName='" + webcamName + '\'' +
-                ", webcamResolution='" + webcamResolution + '\'' +
-                '}';
+        return webcamName + " " + webcamResolution;
     }
 }

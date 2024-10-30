@@ -68,9 +68,6 @@ public class Keyboard extends HardwareComponent {
 
     @Override
     public String toString() {
-        return "Keyboard{" +
-                "keyboardName='" + keyboardName + '\'' +
-                ", keyboardLayout='" + keyboardLayout + '\'' +
-                '}';
+        return keyboardName + " " + keyboardLayout;
     }
 }

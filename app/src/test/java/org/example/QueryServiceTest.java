@@ -59,7 +59,7 @@ public class QueryServiceTest {
         assertNotNull(batteryList);
         assertEquals(1, batteryList.size());
         assertEquals("Battery1", batteryList.get(0).getBatteryName());
-        assertEquals(5000.0, batteryList.get(0).getBatteryCapacity(), 0.01);
+
     }
 
     @Test

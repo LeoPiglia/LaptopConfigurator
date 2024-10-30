@@ -69,6 +69,6 @@ public class Colour {
      */
     @Override
     public String toString() {
-        return "Colour: " + colourName;
+        return colourName;
     }
 }
