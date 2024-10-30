@@ -18,6 +18,15 @@ public class Mouse extends Accessory {
     }
 
     /**
+     * Get the name of the Mouse
+     * @return the name of the Mouse
+     */
+
+    public String getMouseName() {
+        return mouseName;
+    }
+
+    /**
      * Clones the Mouse object
      * @param laptop the laptop to which the Mouse object is associated
      * @return a new Mouse object

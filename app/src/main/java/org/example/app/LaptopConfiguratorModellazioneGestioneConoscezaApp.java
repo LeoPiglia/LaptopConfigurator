@@ -4,7 +4,10 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.apache.jena.ontology.OntModel;
 import org.example.configurator.*;
@@ -20,16 +23,15 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
     private Laptop laptop;
     private QueryService queryService;
+    private ListView<String> configurationList;
 
-    /**
-     * Starts the JavaFX application, initializes the GUI components, and loads the ontology.
-     *
-     * @param primaryStage the primary stage for this application
-     */
     @Override
     public void start(Stage primaryStage) {
         Locale.setDefault(Locale.ENGLISH);
         primaryStage.setTitle("Laptop Configurator");
+
+        // Imposta l'icona della finestra
+        primaryStage.getIcons().add(new Image("icons8-computer-portatile-50.png"));
 
         String ontologyFilePath = "LaptopConfiguratorModellazioneGestioneConoscenza.rdf";
         OntologyLoader ontologyLoader = new OntologyLoader(ontologyFilePath);
@@ -38,47 +40,89 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         if (model != null) {
             SPARQLQueryExecutor queryExecutor = new SPARQLQueryExecutor(model);
             queryService = new QueryService(queryExecutor);
-
             laptop = new Laptop("MyLaptop");
 
-            VBox layout = new VBox(10);
-            layout.setPadding(new Insets(20, 20, 20, 20));
-            layout.setStyle("-fx-background-color: #f0f0f0;"); // Background color
+            // Main layout
+            BorderPane mainLayout = new BorderPane();
+            mainLayout.setPadding(new Insets(15));
+            mainLayout.setStyle("-fx-background-color: #f8f9fa;"); // Light background
 
-            Label welcomeLabel = new Label("Laptop Configurator");
-            welcomeLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
+            // Header
+            Label headerLabel = new Label("Laptop Configurator");
+            headerLabel.setStyle("-fx-text-fill: #343a40; -fx-font-weight: bold;");
+            VBox headerBox = new VBox(headerLabel);
+            headerBox.setPadding(new Insets(10, 0, 20, 0));
+            mainLayout.setTop(headerBox);
 
 
-            ComboBox<String> componentSelector = new ComboBox<>();
-            componentSelector.getItems().addAll( "Hardware Component" ,"Battery", "Port","Operating System", "Audio System", "Cooling System", "Colour", "Guarantee", "Security", "Accessory");
-            componentSelector.setPromptText("Select a component");
-            componentSelector.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;");
+            // Tabs for component configuration
+            TabPane tabPane = createComponentTabs();
+            mainLayout.setCenter(tabPane);
 
-            Button configButton = new Button("Configure");
-            configButton.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;");
+            // Sidebar configuration summary
+            VBox sidebar = createSidebar();
+            mainLayout.setRight(sidebar);
 
-            Button finalizeButton = new Button("Finalize Configuration");
-            finalizeButton.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;");
-
-            String buttonHoverStyle = "-fx-background-color: #4CAF50; -fx-text-fill: white;";
-
-            configButton.setOnMouseEntered(e -> configButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;"));
-            configButton.setOnMouseExited(e -> configButton.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;"));
-
-            finalizeButton.setOnMouseEntered(e -> finalizeButton.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;"));
-            finalizeButton.setOnMouseExited(e -> finalizeButton.setStyle("-fx-font-size: 14px; -fx-padding: 8 10 8 10;"));
-
-            configButton.setOnAction(e -> configureComponent(componentSelector.getValue()));
-            finalizeButton.setOnAction(e -> showFinalConfiguration());
-
-            layout.getChildren().addAll(welcomeLabel, componentSelector, configButton, finalizeButton);
-
-            Scene scene = new Scene(layout, 400, 300);
+            Scene scene = new Scene(mainLayout, 800, 500);
             primaryStage.setScene(scene);
             primaryStage.show();
         } else {
             System.err.println("Error loading the ontology.");
         }
+    }
+
+    private TabPane createComponentTabs() {
+        TabPane tabPane = new TabPane();
+
+        // Creating individual tabs for each component
+        tabPane.getTabs().add(createTab("Audio System", this::configureAudioSystem));
+        tabPane.getTabs().add(createTab("Battery", this::configureBattery));
+        tabPane.getTabs().add(createTab("Colour", this::configureColour));
+        tabPane.getTabs().add(createTab("Cooling System", this::configureCoolingSystem));
+        tabPane.getTabs().add(createTab("Guarantee", this::configureGuarantee));
+        tabPane.getTabs().add(createTab("Operating System", this::configureOperatingSystem));
+        tabPane.getTabs().add(createTab("Security", this::configureSecurity));
+        tabPane.getTabs().add(createTab("Accessory", this::configureAccessory));
+        tabPane.getTabs().add(createTab("Port", this::configurePort));
+        tabPane.getTabs().add(createTab("Hardware Component", this::configureHardwareComponent));
+
+        return tabPane;
+    }
+
+    private Tab createTab(String title, Runnable configurationMethod) {
+        Tab tab = new Tab(title);
+        tab.setClosable(false);
+
+        Button configureButton = new Button("Configure " + title);
+        configureButton.setOnAction(e -> configurationMethod.run());
+
+        VBox content = new VBox(10, configureButton);
+        content.setPadding(new Insets(10));
+        tab.setContent(content);
+
+        return tab;
+    }
+
+    private VBox createSidebar() {
+        VBox sidebar = new VBox(10);
+        sidebar.setPadding(new Insets(15));
+        sidebar.setStyle("-fx-background-color: #ffffff; -fx-border-color: #dee2e6; -fx-border-width: 1;");
+
+        Label summaryLabel = new Label("Configuration Summary");
+        summaryLabel.setFont(new Font("Arial", 16));
+        summaryLabel.setStyle("-fx-text-fill: #343a40; -fx-font-weight: bold;");
+
+        configurationList = new ListView<>();
+        configurationList.setStyle("-fx-background-color: #f1f3f5; -fx-border-color: #ced4da;");
+
+        Button finalizeButton = new Button("Finalize Configuration");
+        finalizeButton.setFont(new Font("Arial", 14));
+        finalizeButton.setStyle("-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 8 16 8 16;");
+        finalizeButton.setOnAction(e -> showFinalConfiguration());
+
+        sidebar.getChildren().addAll(summaryLabel, configurationList, finalizeButton);
+
+        return sidebar;
     }
 
     /**
@@ -144,9 +188,11 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             audioDialog.setHeaderText("Select an audio system");
             audioDialog.setContentText("Audio System:");
 
+
             audioDialog.showAndWait().ifPresent(selectedAudioSystem -> {
                 laptop.setAudioSystem(selectedAudioSystem);
                 showSuccess("You have added the audio system: " + selectedAudioSystem.getAudioSystemName());
+                updateConfigurationList("Audio System", selectedAudioSystem.getAudioSystemName());
             });
         }
 
@@ -168,6 +214,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             batteryDialog.showAndWait().ifPresent(selectedBattery -> {
                 laptop.setBattery(selectedBattery);
                 showSuccess("You have added the battery: " + selectedBattery.getBatteryName());
+                updateConfigurationList("Battery", selectedBattery.getBatteryName());
             });
         }
 
@@ -185,6 +232,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         colourDialog.showAndWait().ifPresent(selectedColour -> {
             laptop.setColour(selectedColour);
             showSuccess("You have added the colour: " + selectedColour.getColourName());
+            updateConfigurationList("Colour", selectedColour.getColourName());
         });
     }
 
@@ -202,6 +250,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         coolingDialog.showAndWait().ifPresent(selectedCoolingSystem -> {
             laptop.setCoolingSystem(selectedCoolingSystem);
             showSuccess("You have added the cooling system: " + selectedCoolingSystem.getCoolingSystemName());
+            updateConfigurationList("Cooling System", selectedCoolingSystem.getCoolingSystemName());
         });
     }
 
@@ -219,6 +268,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         guaranteeDialog.showAndWait().ifPresent(selectedGuarantee -> {
             laptop.setGuarantee(selectedGuarantee);
             showSuccess("You have added the guarantee: " + selectedGuarantee.getGuaranteeName());
+            updateConfigurationList("Guarantee", selectedGuarantee.getGuaranteeName());
         });
     }
 
@@ -240,6 +290,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         operatingSystemDialog.showAndWait().ifPresent(selectedOperatingSystem -> {
             laptop.setOperatingSystem(selectedOperatingSystem);
             showSuccess("You have added the operating system: " + selectedOperatingSystem.getOperatingSystemName());
+            updateConfigurationList("Operating System", selectedOperatingSystem.getOperatingSystemName());
         });
     }
 
@@ -287,6 +338,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         antivirusDialog.showAndWait().ifPresent(selectedAntivirus -> {
             laptop.addSecurity(selectedAntivirus);
             showSuccess("You have added the antivirus program: " + selectedAntivirus.getAntivirusName());
+            updateConfigurationList("Security", selectedAntivirus.getAntivirusName());
         });
     }
 
@@ -304,6 +356,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         protectionFeatureDialog.showAndWait().ifPresent(selectedProtectionFeature -> {
             laptop.addSecurity(selectedProtectionFeature);
             showSuccess("You have added the protection feature: " + selectedProtectionFeature.getProtectionFeatureName());
+            updateConfigurationList("Security", selectedProtectionFeature.getProtectionFeatureName());
         });
     }
 
@@ -349,6 +402,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         mouseDialog.showAndWait().ifPresent(selectedMouse -> {
             laptop.addAccessory(selectedMouse);
             showSuccess("You have added the mouse");
+            updateConfigurationList("Accessory", selectedMouse.getMouseName());
         });
     }
 
@@ -366,6 +420,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         externalKeyboardDialog.showAndWait().ifPresent(selectedExternalKeyboard -> {
             laptop.addAccessory(selectedExternalKeyboard);
             showSuccess("You have added the external keyboard" + selectedExternalKeyboard.getExternalKeyboardName());
+            updateConfigurationList("Accessory", selectedExternalKeyboard.getExternalKeyboardName());
         });
     }
 
@@ -383,6 +438,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         externalMonitorDialog.showAndWait().ifPresent(selectedExternalMonitor -> {
             laptop.addAccessory(selectedExternalMonitor);
             showSuccess("You have added the external monitor" + selectedExternalMonitor.getExternalMonitorName());
+            updateConfigurationList("Accessory", selectedExternalMonitor.getExternalMonitorName());
         });
     }
 
@@ -424,6 +480,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         usbPortDialog.showAndWait().ifPresent(selectedUsbPort -> {
             laptop.addPort(selectedUsbPort);
             showSuccess("You have added the USB port");
+            updateConfigurationList("Port", selectedUsbPort.toString());
         });
     }
 
@@ -441,6 +498,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         hdmiPortDialog.showAndWait().ifPresent(selectedHdmiPort -> {
             laptop.addPort(selectedHdmiPort);
             showSuccess("You have added the HDMI port");
+            updateConfigurationList("Port", selectedHdmiPort.toString());
         });
     }
 
@@ -506,6 +564,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         cpuDialog.showAndWait().ifPresent(selectedCpu -> {
             laptop.addHardwareComponent(selectedCpu);
             showSuccess("You have added the CPU: " + selectedCpu.getCpuName());
+            updateConfigurationList("CPU", selectedCpu.getCpuName());
         });
     }
 
@@ -523,6 +582,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         displayDialog.showAndWait().ifPresent(selectedDisplay -> {
             laptop.addHardwareComponent(selectedDisplay);
             showSuccess("You have added the display: " + selectedDisplay.getDisplayName());
+            updateConfigurationList("Display", selectedDisplay.getDisplayName());
         });
     }
 
@@ -540,6 +600,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         graphicsCardDialog.showAndWait().ifPresent(selectedGraphicsCard -> {
             laptop.addHardwareComponent(selectedGraphicsCard);
             showSuccess("You have added the graphics card: " + selectedGraphicsCard.getGraphicsCardName());
+            updateConfigurationList("Graphics Card", selectedGraphicsCard.getGraphicsCardName());
         });
     }
 
@@ -557,6 +618,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         keyboardDialog.showAndWait().ifPresent(selectedKeyboard -> {
             laptop.addHardwareComponent(selectedKeyboard);
             showSuccess("You have added the keyboard: " + selectedKeyboard.getKeyboardName());
+            updateConfigurationList("Keyboard", selectedKeyboard.getKeyboardName());
         });
     }
 
@@ -574,6 +636,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         ramDialog.showAndWait().ifPresent(selectedRam -> {
             laptop.addHardwareComponent(selectedRam);
             showSuccess("You have added the RAM: " + selectedRam.getRamName());
+            updateConfigurationList("RAM", selectedRam.getRamName());
         });
     }
 
@@ -591,6 +654,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         storageDialog.showAndWait().ifPresent(selectedStorage -> {
             laptop.addHardwareComponent(selectedStorage);
             showSuccess("You have added the storage: " + selectedStorage.getStorageName());
+            updateConfigurationList("Storage", selectedStorage.getStorageName());
         });
     }
 
@@ -608,6 +672,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         trackpadDialog.showAndWait().ifPresent(selectedTrackpad -> {
             laptop.addHardwareComponent(selectedTrackpad);
             showSuccess("You have added the trackpad: " + selectedTrackpad.getTrackpadName());
+            updateConfigurationList("Trackpad", selectedTrackpad.getTrackpadName());
         });
     }
 
@@ -625,31 +690,45 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         webcamDialog.showAndWait().ifPresent(selectedWebcam -> {
             laptop.addHardwareComponent(selectedWebcam);
             showSuccess("You have added the webcam: " + selectedWebcam.getWebcamName());
+            updateConfigurationList("Webcam", selectedWebcam.getWebcamName());
         });
     }
 
+    private void updateConfigurationList(String component, String name) {
+        String entry = component + ": " + name;
+        // Rimuovi l’elemento esistente per lo stesso componente
+        configurationList.getItems().removeIf(item -> item.startsWith(component + ":"));
+        // Aggiungi la nuova configurazione alla lista
+        configurationList.getItems().add(entry);
+    }
 
-        // Security
-        private void showFinalConfiguration() {
-            StringBuilder configuration = new StringBuilder();
-            configuration.append("Final Configuration:\n");
-            configuration.append("Audio System: ").append(laptop.getAudioSystem()).append("\n");
-            configuration.append("Battery: ").append(laptop.getBattery()).append("\n");
-            configuration.append("Colour: ").append(laptop.getColour()).append("\n");
-            configuration.append("Cooling System: ").append(laptop.getCoolingSystem()).append("\n");
-            configuration.append("Guarantee: ").append(laptop.getGuarantee()).append("\n");
-            configuration.append("Operating System: ").append(laptop.getOperatingSystem()).append("\n");
-            configuration.append("Security: ").append(laptop.getSecurities()).append("\n");
-            configuration.append("Accessories: ").append(laptop.getAccessories()).append("\n");
-            configuration.append("Ports: ").append(laptop.getPorts()).append("\n");
-            configuration.append("Hardware Components: ").append(laptop.getHardwareComponents()).append("\n");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Final Configuration");
-            alert.setHeaderText(null);
-            alert.setContentText(configuration.toString());
-            alert.showAndWait();
-        }
+    private void showFinalConfiguration() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Final Configuration");
+        alert.setHeaderText(null);
 
+
+        StringBuilder configuration = new StringBuilder("Final Configuration:\n");
+        configuration.append("Audio System: ").append(laptop.getAudioSystem()).append("\n");
+        configuration.append("Battery: ").append(laptop.getBattery()).append("\n");
+        configuration.append("Colour: ").append(laptop.getColour()).append("\n");
+        configuration.append("Cooling System: ").append(laptop.getCoolingSystem()).append("\n");
+        configuration.append("Guarantee: ").append(laptop.getGuarantee()).append("\n");
+        configuration.append("Operating System: ").append(laptop.getOperatingSystem()).append("\n");
+        configuration.append("Security: ").append(laptop.getSecurities()).append("\n");
+        configuration.append("Accessories: ").append(laptop.getAccessories()).append("\n");
+        configuration.append("Ports: ").append(laptop.getPorts()).append("\n");
+        configuration.append("Hardware Components: ").append(laptop.getHardwareComponents()).append("\n");
+
+
+
+        alert.setContentText(configuration.toString());
+        alert.showAndWait();
+    }
+
+    private String formatComponent(Object component) {
+        return component != null ? component.toString() : "Not configured";
+    }
 
         // Helper methods for showing alerts
         private void showError (String message){
