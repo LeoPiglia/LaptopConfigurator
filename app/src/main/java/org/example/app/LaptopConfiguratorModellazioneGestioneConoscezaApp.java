@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -31,7 +32,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         primaryStage.setTitle("Laptop Configurator");
 
         // Imposta l'icona della finestra
-        primaryStage.getIcons().add(new Image("icons8-computer-portatile-50.png"));
+        primaryStage.getIcons().add(new Image("icons/laptop.png"));
 
         String ontologyFilePath = "LaptopConfiguratorModellazioneGestioneConoscenza.rdf";
         OntologyLoader ontologyLoader = new OntologyLoader(ontologyFilePath);
@@ -189,9 +190,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             audioDialog.setContentText("Audio System:");
 
 
+            // Load the custom icon image
+            ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/audioSystem.png")));
+            customIcon.setFitHeight(50);
+            customIcon.setFitWidth(50);
+
+            // Set the custom icon as the graphic for the dialog's header
+            audioDialog.setGraphic(customIcon);
+
             audioDialog.showAndWait().ifPresent(selectedAudioSystem -> {
                 laptop.setAudioSystem(selectedAudioSystem);
-                showSuccess("You have added the audio system: " + selectedAudioSystem.getAudioSystemName());
                 updateConfigurationList("Audio System", selectedAudioSystem.getAudioSystemName());
             });
         }
@@ -211,9 +219,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             batteryDialog.setHeaderText("Select a battery");
             batteryDialog.setContentText("Battery:");
 
+            // Load the custom icon image
+            ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/battery.png")));
+            customIcon.setFitHeight(50);
+            customIcon.setFitWidth(50);
+
+            // Set the custom icon as the graphic for the dialog's header
+            batteryDialog.setGraphic(customIcon);
+
             batteryDialog.showAndWait().ifPresent(selectedBattery -> {
                 laptop.setBattery(selectedBattery);
-                showSuccess("You have added the battery: " + selectedBattery.getBatteryName());
                 updateConfigurationList("Battery", selectedBattery.getBatteryName());
             });
         }
@@ -229,9 +244,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         colourDialog.setHeaderText("Select a colour");
         colourDialog.setContentText("Colour:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/colour.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        colourDialog.setGraphic(customIcon);
+
         colourDialog.showAndWait().ifPresent(selectedColour -> {
             laptop.setColour(selectedColour);
-            showSuccess("You have added the colour: " + selectedColour.getColourName());
             updateConfigurationList("Colour", selectedColour.getColourName());
         });
     }
@@ -247,9 +269,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         coolingDialog.setHeaderText("Select a cooling system");
         coolingDialog.setContentText("Cooling System:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/coolingSystem.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        coolingDialog.setGraphic(customIcon);
+
         coolingDialog.showAndWait().ifPresent(selectedCoolingSystem -> {
             laptop.setCoolingSystem(selectedCoolingSystem);
-            showSuccess("You have added the cooling system: " + selectedCoolingSystem.getCoolingSystemName());
             updateConfigurationList("Cooling System", selectedCoolingSystem.getCoolingSystemName());
         });
     }
@@ -265,9 +294,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         guaranteeDialog.setHeaderText("Select a guarantee");
         guaranteeDialog.setContentText("Guarantee:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/Guarantee.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        guaranteeDialog.setGraphic(customIcon);
+
         guaranteeDialog.showAndWait().ifPresent(selectedGuarantee -> {
             laptop.setGuarantee(selectedGuarantee);
-            showSuccess("You have added the guarantee: " + selectedGuarantee.getGuaranteeName());
             updateConfigurationList("Guarantee", selectedGuarantee.getGuaranteeName());
         });
     }
@@ -287,9 +323,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         operatingSystemDialog.setHeaderText("Select an operating system");
         operatingSystemDialog.setContentText("Operating System:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/operativeSystem.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        operatingSystemDialog.setGraphic(customIcon);
+
         operatingSystemDialog.showAndWait().ifPresent(selectedOperatingSystem -> {
             laptop.setOperatingSystem(selectedOperatingSystem);
-            showSuccess("You have added the operating system: " + selectedOperatingSystem.getOperatingSystemName());
             updateConfigurationList("Operating System", selectedOperatingSystem.getOperatingSystemName());
         });
     }
@@ -308,6 +351,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         securityDialog.setTitle("Security Configuration");
         securityDialog.setHeaderText("Select the type of security you want to configure:");
         securityDialog.setContentText("Security:");
+
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/security.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        securityDialog.setGraphic(customIcon);
 
         // Show the dialog and act based on the choice
         securityDialog.showAndWait().ifPresent(selectedSecurity -> {
@@ -335,9 +386,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         antivirusDialog.setHeaderText("Select an antivirus program");
         antivirusDialog.setContentText("Antivirus:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/antivirus.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        antivirusDialog.setGraphic(customIcon);
+
         antivirusDialog.showAndWait().ifPresent(selectedAntivirus -> {
             laptop.addSecurity(selectedAntivirus);
-            showSuccess("You have added the antivirus program: " + selectedAntivirus.getAntivirusName());
             updateConfigurationList("Security", selectedAntivirus.getAntivirusName());
         });
     }
@@ -353,9 +411,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         protectionFeatureDialog.setHeaderText("Select a protection feature");
         protectionFeatureDialog.setContentText("Protection Feature:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/protectionFeature.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        protectionFeatureDialog.setGraphic(customIcon);
+
         protectionFeatureDialog.showAndWait().ifPresent(selectedProtectionFeature -> {
             laptop.addSecurity(selectedProtectionFeature);
-            showSuccess("You have added the protection feature: " + selectedProtectionFeature.getProtectionFeatureName());
             updateConfigurationList("Security", selectedProtectionFeature.getProtectionFeatureName());
         });
     }
@@ -370,6 +435,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         accessoryDialog.setTitle("Accessory Configuration");
         accessoryDialog.setHeaderText("Select the type of accessory you want to configure:");
         accessoryDialog.setContentText("Accessory:");
+
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/accessory.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        accessoryDialog.setGraphic(customIcon);
 
         accessoryDialog.showAndWait().ifPresent(selectedAccessory -> {
             switch (selectedAccessory) {
@@ -399,9 +472,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         mouseDialog.setHeaderText("Select a mouse");
         mouseDialog.setContentText("Mouse:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/mouse.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        mouseDialog.setGraphic(customIcon);
+
         mouseDialog.showAndWait().ifPresent(selectedMouse -> {
             laptop.addAccessory(selectedMouse);
-            showSuccess("You have added the mouse");
             updateConfigurationList("Accessory", selectedMouse.getMouseName());
         });
     }
@@ -417,9 +497,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         externalKeyboardDialog.setHeaderText("Select an external keyboard");
         externalKeyboardDialog.setContentText("External Keyboard:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/keyboard.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        externalKeyboardDialog.setGraphic(customIcon);
+
         externalKeyboardDialog.showAndWait().ifPresent(selectedExternalKeyboard -> {
             laptop.addAccessory(selectedExternalKeyboard);
-            showSuccess("You have added the external keyboard" + selectedExternalKeyboard.getExternalKeyboardName());
             updateConfigurationList("Accessory", selectedExternalKeyboard.getExternalKeyboardName());
         });
     }
@@ -435,13 +522,20 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         externalMonitorDialog.setHeaderText("Select an external monitor");
         externalMonitorDialog.setContentText("External Monitor:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/monitor.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        externalMonitorDialog.setGraphic(customIcon);
+
         externalMonitorDialog.showAndWait().ifPresent(selectedExternalMonitor -> {
             laptop.addAccessory(selectedExternalMonitor);
-            showSuccess("You have added the external monitor" + selectedExternalMonitor.getExternalMonitorName());
             updateConfigurationList("Accessory", selectedExternalMonitor.getExternalMonitorName());
         });
     }
-
+    // TODO: ADD ICO0NS
     private void configurePort() {
         List<String> portsOptions = new ArrayList<>();
         portsOptions.add("Usb");
