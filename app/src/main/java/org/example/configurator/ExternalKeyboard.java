@@ -25,7 +25,7 @@ public class ExternalKeyboard extends Accessory {
      */
     @Override
     public Accessory clone(Laptop laptop) {
-        return new ExternalKeyboard(laptop, this.getConnectionType(), this.externalKeyboardName, this.externalKeyboardLayout);
+        return new ExternalKeyboard(laptop,this.getConnectionType(), this.externalKeyboardName,this.externalKeyboardLayout);
     }
 
     /**

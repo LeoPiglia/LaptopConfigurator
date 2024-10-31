@@ -64,7 +64,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             VBox sidebar = createSidebar();
             mainLayout.setRight(sidebar);
 
-            Scene scene = new Scene(mainLayout, 800, 500);
+            Scene scene = new Scene(mainLayout, 1070, 500);
             primaryStage.setScene(scene);
             primaryStage.show();
         } else {
@@ -95,6 +95,8 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         tab.setClosable(false);
 
         Button configureButton = new Button("Configure " + title);
+        configureButton.setFont(new Font("Arial", 15));
+        configureButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white; -fx-padding: 8 16 8 16;");
         configureButton.setOnAction(e -> configurationMethod.run());
 
         VBox content = new VBox(10, configureButton);
@@ -117,7 +119,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         configurationList.setStyle("-fx-background-color: #f1f3f5; -fx-border-color: #ced4da;");
 
         Button finalizeButton = new Button("Finalize Configuration");
-        finalizeButton.setFont(new Font("Arial", 14));
+        finalizeButton.setFont(new Font("Arial", 15));
         finalizeButton.setStyle("-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 8 16 8 16;");
         finalizeButton.setOnAction(e -> showFinalConfiguration());
 
@@ -535,7 +537,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
             updateConfigurationList("Accessory", selectedExternalMonitor.getExternalMonitorName());
         });
     }
-    // TODO: ADD ICO0NS
+
     private void configurePort() {
         List<String> portsOptions = new ArrayList<>();
         portsOptions.add("Usb");
@@ -545,6 +547,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         portsDialog.setTitle("Port Configuration");
         portsDialog.setHeaderText("Select the type of port you want to configure:");
         portsDialog.setContentText("Port:");
+
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/port.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        portsDialog.setGraphic(customIcon);
 
         portsDialog.showAndWait().ifPresent(selectedPort -> {
             switch (selectedPort) {
@@ -571,10 +581,17 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         usbPortDialog.setHeaderText("Select a USB port");
         usbPortDialog.setContentText("USB Port:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/usb.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        usbPortDialog.setGraphic(customIcon);
+
         usbPortDialog.showAndWait().ifPresent(selectedUsbPort -> {
             laptop.addPort(selectedUsbPort);
-            showSuccess("You have added the USB port");
-            updateConfigurationList("Port", selectedUsbPort.toString());
+            updateConfigurationList("USB Version", selectedUsbPort.toString());
         });
     }
 
@@ -589,10 +606,17 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         hdmiPortDialog.setHeaderText("Select an HDMI port");
         hdmiPortDialog.setContentText("HDMI Port:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/hdmi.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        hdmiPortDialog.setGraphic(customIcon);
+
         hdmiPortDialog.showAndWait().ifPresent(selectedHdmiPort -> {
             laptop.addPort(selectedHdmiPort);
-            showSuccess("You have added the HDMI port");
-            updateConfigurationList("Port", selectedHdmiPort.toString());
+            updateConfigurationList("HDMI Version", selectedHdmiPort.getHdmiVersion());
         });
     }
 
@@ -611,6 +635,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         hardwareComponentDialog.setTitle("Hardware Component Configuration");
         hardwareComponentDialog.setHeaderText("Select the type of hardware component you want to configure:");
         hardwareComponentDialog.setContentText("Hardware Component:");
+
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/laptop.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        hardwareComponentDialog.setGraphic(customIcon);
 
         hardwareComponentDialog.showAndWait().ifPresent(selectedHardwareComponent -> {
             switch (selectedHardwareComponent) {
@@ -655,9 +687,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         cpuDialog.setHeaderText("Select a CPU");
         cpuDialog.setContentText("CPU:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/cpu.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        cpuDialog.setGraphic(customIcon);
+
         cpuDialog.showAndWait().ifPresent(selectedCpu -> {
             laptop.addHardwareComponent(selectedCpu);
-            showSuccess("You have added the CPU: " + selectedCpu.getCpuName());
             updateConfigurationList("CPU", selectedCpu.getCpuName());
         });
     }
@@ -673,9 +712,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         displayDialog.setHeaderText("Select a display");
         displayDialog.setContentText("Display:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/monitor.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        displayDialog.setGraphic(customIcon);
+
         displayDialog.showAndWait().ifPresent(selectedDisplay -> {
             laptop.addHardwareComponent(selectedDisplay);
-            showSuccess("You have added the display: " + selectedDisplay.getDisplayName());
             updateConfigurationList("Display", selectedDisplay.getDisplayName());
         });
     }
@@ -691,9 +737,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         graphicsCardDialog.setHeaderText("Select a graphics card");
         graphicsCardDialog.setContentText("Graphics Card:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/GraphicsCard.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        graphicsCardDialog.setGraphic(customIcon);
+
         graphicsCardDialog.showAndWait().ifPresent(selectedGraphicsCard -> {
             laptop.addHardwareComponent(selectedGraphicsCard);
-            showSuccess("You have added the graphics card: " + selectedGraphicsCard.getGraphicsCardName());
             updateConfigurationList("Graphics Card", selectedGraphicsCard.getGraphicsCardName());
         });
     }
@@ -708,6 +761,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         keyboardDialog.setTitle("Keyboard Configuration");
         keyboardDialog.setHeaderText("Select a keyboard");
         keyboardDialog.setContentText("Keyboard:");
+
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/keyboard.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        keyboardDialog.setGraphic(customIcon);
 
         keyboardDialog.showAndWait().ifPresent(selectedKeyboard -> {
             laptop.addHardwareComponent(selectedKeyboard);
@@ -727,9 +788,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         ramDialog.setHeaderText("Select a RAM");
         ramDialog.setContentText("RAM:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/ram.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        ramDialog.setGraphic(customIcon);
+
         ramDialog.showAndWait().ifPresent(selectedRam -> {
             laptop.addHardwareComponent(selectedRam);
-            showSuccess("You have added the RAM: " + selectedRam.getRamName());
             updateConfigurationList("RAM", selectedRam.getRamName());
         });
     }
@@ -745,9 +813,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         storageDialog.setHeaderText("Select a storage");
         storageDialog.setContentText("Storage:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/storage.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        storageDialog.setGraphic(customIcon);
+
         storageDialog.showAndWait().ifPresent(selectedStorage -> {
             laptop.addHardwareComponent(selectedStorage);
-            showSuccess("You have added the storage: " + selectedStorage.getStorageName());
             updateConfigurationList("Storage", selectedStorage.getStorageName());
         });
     }
@@ -763,9 +838,16 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         trackpadDialog.setHeaderText("Select a trackpad");
         trackpadDialog.setContentText("Trackpad:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/trackpad.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        trackpadDialog.setGraphic(customIcon);
+
         trackpadDialog.showAndWait().ifPresent(selectedTrackpad -> {
             laptop.addHardwareComponent(selectedTrackpad);
-            showSuccess("You have added the trackpad: " + selectedTrackpad.getTrackpadName());
             updateConfigurationList("Trackpad", selectedTrackpad.getTrackpadName());
         });
     }
@@ -781,6 +863,14 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         webcamDialog.setHeaderText("Select a webcam");
         webcamDialog.setContentText("Webcam:");
 
+        // Load the custom icon image
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/webcam.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        // Set the custom icon as the graphic for the dialog's header
+        webcamDialog.setGraphic(customIcon);
+
         webcamDialog.showAndWait().ifPresent(selectedWebcam -> {
             laptop.addHardwareComponent(selectedWebcam);
             showSuccess("You have added the webcam: " + selectedWebcam.getWebcamName());
@@ -788,10 +878,13 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         });
     }
 
+
     private void updateConfigurationList(String component, String name) {
         String entry = component + ": " + name;
-        // Rimuovi l’elemento esistente per lo stesso componente
-        configurationList.getItems().removeIf(item -> item.startsWith(component + ":"));
+        // Rimuovi l'entry esistente solo se non è una porta
+        if (!component.equals("Port")) {
+            configurationList.getItems().removeIf(item -> item.startsWith(component + ":"));
+        }
         // Aggiungi la nuova configurazione alla lista
         configurationList.getItems().add(entry);
     }
@@ -801,19 +894,25 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         alert.setTitle("Final Configuration");
         alert.setHeaderText(null);
 
+        // Costruisci la configurazione finale
+        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/laptop.png")));
+        customIcon.setFitHeight(50);
+        customIcon.setFitWidth(50);
+
+        alert.setGraphic(customIcon);
+
 
         StringBuilder configuration = new StringBuilder("Final Configuration:\n");
-        configuration.append("Audio System: ").append(laptop.getAudioSystem()).append("\n");
-        configuration.append("Battery: ").append(laptop.getBattery()).append("\n");
-        configuration.append("Colour: ").append(laptop.getColour()).append("\n");
-        configuration.append("Cooling System: ").append(laptop.getCoolingSystem()).append("\n");
-        configuration.append("Guarantee: ").append(laptop.getGuarantee()).append("\n");
-        configuration.append("Operating System: ").append(laptop.getOperatingSystem()).append("\n");
-        configuration.append("Security: ").append(laptop.getSecurities()).append("\n");
-        configuration.append("Accessories: ").append(laptop.getAccessories()).append("\n");
-        configuration.append("Ports: ").append(laptop.getPorts()).append("\n");
-        configuration.append("Hardware Components: ").append(laptop.getHardwareComponents()).append("\n");
-
+        configuration.append("Audio System: ").append(formatComponent(laptop.getAudioSystem())).append("\n");
+        configuration.append("Battery: ").append(formatComponent(laptop.getBattery())).append("\n");
+        configuration.append("Colour: ").append(formatComponent(laptop.getColour())).append("\n");
+        configuration.append("Cooling System: ").append(formatComponent(laptop.getCoolingSystem())).append("\n");
+        configuration.append("Guarantee: ").append(formatComponent(laptop.getGuarantee())).append("\n");
+        configuration.append("Operating System: ").append(formatComponent(laptop.getOperatingSystem())).append("\n");
+        configuration.append("Security: ").append(formatComponent(laptop.getSecurities())).append("\n");
+        configuration.append("Accessories: ").append(formatComponent(laptop.getAccessories())).append("\n");
+        configuration.append("Ports: ").append(formatComponent(laptop.getPorts())).append("\n");
+        configuration.append("Hardware Components: ").append(formatComponent(laptop.getHardwareComponents())).append("\n");
 
 
         alert.setContentText(configuration.toString());
