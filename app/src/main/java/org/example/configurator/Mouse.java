@@ -12,7 +12,7 @@ public class Mouse extends Accessory {
      * @param ConnectionType the connection type of the Mouse object
      */
 
-    public Mouse(Laptop AccessoryOfLaptop, String ConnectionType, String mouseName) {
+    public Mouse(Laptop AccessoryOfLaptop, String mouseName, String ConnectionType ) {
         super(AccessoryOfLaptop, ConnectionType);
         this.mouseName = mouseName;
     }

@@ -14,7 +14,7 @@ public class Storage extends HardwareComponent {
      * @param storageCapacity the capacity of the Storage
      * @param storageName the name of the Storage
      */
-    public Storage(Laptop laptopOfHardwareComponent, String storageCapacity, String storageName) {
+    public Storage(Laptop laptopOfHardwareComponent, String storageName, String storageCapacity) {
         super(laptopOfHardwareComponent);
         this.storageCapacity = storageCapacity;
         this.storageName = storageName;
@@ -26,7 +26,7 @@ public class Storage extends HardwareComponent {
      */
     @Override
     public HardwareComponent clone() {
-        return new Storage(this.getLaptopOfHardwareComponent(), this.storageCapacity, this.storageName);
+        return new Storage(this.getLaptopOfHardwareComponent(), this.storageName, this.storageCapacity);
     }
 
     /**

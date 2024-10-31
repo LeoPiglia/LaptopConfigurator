@@ -12,7 +12,7 @@ public class ExternalKeyboard extends Accessory {
      * @param externalKeyboardName the name of the external keyboard. For example, Logitech K120 or Apple Magic Keyboard
      * @param externalKeyboardLayout the layout of the external keyboard for example QWERTY
      */
-    public ExternalKeyboard(Laptop AccessoryOfLaptop, String ConnectionType, String externalKeyboardName, String externalKeyboardLayout) {
+    public ExternalKeyboard(Laptop AccessoryOfLaptop, String externalKeyboardName, String ConnectionType,  String externalKeyboardLayout) {
         super(AccessoryOfLaptop, ConnectionType);
         this.externalKeyboardName = externalKeyboardName;
         this.externalKeyboardLayout = externalKeyboardLayout;

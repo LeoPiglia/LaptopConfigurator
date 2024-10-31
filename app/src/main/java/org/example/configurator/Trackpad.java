@@ -14,7 +14,7 @@ public class Trackpad extends HardwareComponent {
      * @param trackpadDimensions the dimensions of the Trackpad
      * @param trackpadName the name of the Trackpad
      */
-    public Trackpad(Laptop laptopOfHardwareComponent, String trackpadDimensions, String trackpadName) {
+    public Trackpad(Laptop laptopOfHardwareComponent, String trackpadName, String trackpadDimensions) {
         super(laptopOfHardwareComponent);
         this.trackpadDimensions = trackpadDimensions;
         this.trackpadName = trackpadName;
@@ -26,7 +26,7 @@ public class Trackpad extends HardwareComponent {
      */
     @Override
     public HardwareComponent clone() {
-        return new Trackpad(this.getLaptopOfHardwareComponent(), this.trackpadDimensions, this.trackpadName);
+        return new Trackpad(this.getLaptopOfHardwareComponent(), this.trackpadName, this.trackpadDimensions );
     }
 
     /**

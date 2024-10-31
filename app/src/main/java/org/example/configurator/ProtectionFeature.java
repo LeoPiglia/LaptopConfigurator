@@ -10,7 +10,7 @@ public class ProtectionFeature extends Security {
      * @param laptopOfSecurity il laptop a cui l'oggetto ProtectionFeature è associato
      * @param protectionFeatureType il tipo di protezione dell'oggetto ProtectionFeature
      */
-    public ProtectionFeature(Laptop laptopOfSecurity, String protectionFeatureType, String protectionFeatureName) {
+    public ProtectionFeature(Laptop laptopOfSecurity, String protectionFeatureName, String protectionFeatureType) {
         super(laptopOfSecurity);
         this.protectionFeatureType = protectionFeatureType;
         this.protectionFeatureName = protectionFeatureName;
@@ -24,7 +24,7 @@ public class ProtectionFeature extends Security {
 
     @Override
     public Security clone(Laptop laptop) {
-        return new ProtectionFeature(laptop, this.protectionFeatureType, this.protectionFeatureName);
+        return new ProtectionFeature(laptop, this.protectionFeatureName, this.protectionFeatureType );
     }
 
     /**

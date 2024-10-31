@@ -16,6 +16,7 @@ import org.example.ontology.OntologyLoader;
 import org.example.ontology.QueryService;
 import org.example.ontology.SPARQLQueryExecutor;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -398,7 +399,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         antivirusDialog.showAndWait().ifPresent(selectedAntivirus -> {
             laptop.addSecurity(selectedAntivirus);
-            updateConfigurationList("Security", selectedAntivirus.getAntivirusName());
+            updateConfigurationList("Antivirus", selectedAntivirus.getAntivirusName());
         });
     }
 
@@ -423,7 +424,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         protectionFeatureDialog.showAndWait().ifPresent(selectedProtectionFeature -> {
             laptop.addSecurity(selectedProtectionFeature);
-            updateConfigurationList("Security", selectedProtectionFeature.getProtectionFeatureName());
+            updateConfigurationList("Protection Feature", selectedProtectionFeature.getProtectionFeatureName());
         });
     }
 
@@ -484,7 +485,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         mouseDialog.showAndWait().ifPresent(selectedMouse -> {
             laptop.addAccessory(selectedMouse);
-            updateConfigurationList("Accessory", selectedMouse.getMouseName());
+            updateConfigurationList("Mouse", selectedMouse.getMouseName());
         });
     }
 
@@ -509,7 +510,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         externalKeyboardDialog.showAndWait().ifPresent(selectedExternalKeyboard -> {
             laptop.addAccessory(selectedExternalKeyboard);
-            updateConfigurationList("Accessory", selectedExternalKeyboard.getExternalKeyboardName());
+            updateConfigurationList("External Keyboard", selectedExternalKeyboard.getExternalKeyboardName());
         });
     }
 
@@ -534,7 +535,7 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         externalMonitorDialog.showAndWait().ifPresent(selectedExternalMonitor -> {
             laptop.addAccessory(selectedExternalMonitor);
-            updateConfigurationList("Accessory", selectedExternalMonitor.getExternalMonitorName());
+            updateConfigurationList("External Monitor", selectedExternalMonitor.getExternalMonitorName());
         });
     }
 
@@ -738,12 +739,13 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
         graphicsCardDialog.setContentText("Graphics Card:");
 
         // Load the custom icon image
-        ImageView customIcon = new ImageView(new Image(getClass().getResourceAsStream("/icons/GraphicsCard.png")));
-        customIcon.setFitHeight(50);
-        customIcon.setFitWidth(50);
-
-        // Set the custom icon as the graphic for the dialog's header
-        graphicsCardDialog.setGraphic(customIcon);
+        InputStream iconStream = getClass().getResourceAsStream("/icons/GraphicCard.png");
+        if (iconStream != null) {
+            ImageView customIcon = new ImageView(new Image(iconStream));
+            customIcon.setFitHeight(50);
+            customIcon.setFitWidth(50);
+            graphicsCardDialog.setGraphic(customIcon);
+        }
 
         graphicsCardDialog.showAndWait().ifPresent(selectedGraphicsCard -> {
             laptop.addHardwareComponent(selectedGraphicsCard);
@@ -772,7 +774,6 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         keyboardDialog.showAndWait().ifPresent(selectedKeyboard -> {
             laptop.addHardwareComponent(selectedKeyboard);
-            showSuccess("You have added the keyboard: " + selectedKeyboard.getKeyboardName());
             updateConfigurationList("Keyboard", selectedKeyboard.getKeyboardName());
         });
     }
@@ -873,7 +874,6 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
         webcamDialog.showAndWait().ifPresent(selectedWebcam -> {
             laptop.addHardwareComponent(selectedWebcam);
-            showSuccess("You have added the webcam: " + selectedWebcam.getWebcamName());
             updateConfigurationList("Webcam", selectedWebcam.getWebcamName());
         });
     }
@@ -881,8 +881,8 @@ public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Applicat
 
     private void updateConfigurationList(String component, String name) {
         String entry = component + ": " + name;
-        // Rimuovi l'entry esistente solo se non è una porta
-        if (!component.equals("Port")) {
+        // Rimuovi l'entry esistente solo se non è una porta, un accessorio, un componente hardware o una sicurezza
+        if (!component.equals("Port") && !component.equals("Accessory") && !component.equals("Hardware Component") && !component.equals("Security")) {
             configurationList.getItems().removeIf(item -> item.startsWith(component + ":"));
         }
         // Aggiungi la nuova configurazione alla lista
