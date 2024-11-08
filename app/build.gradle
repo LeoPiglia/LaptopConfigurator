@@ -71,7 +71,7 @@ test {
 application {
     mainClass = 'org.example.app.LaptopConfiguratorModellazioneGestioneConoscezaApp'
     applicationDefaultJvmArgs = [
-            "--module-path", 'C:\\ProgramData\\JavaFX\\javafx-sdk-22.0.2\\lib',
+            "--module-path", 'C:\\\\Program Files\\\\JavaFX\\\\javafx-sdk-20.0.2\\\\lib',
             "--add-modules", "javafx.controls,javafx.fxml"
     ]
 }

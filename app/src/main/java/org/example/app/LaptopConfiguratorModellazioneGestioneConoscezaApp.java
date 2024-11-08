@@ -1,5 +1,6 @@
 package org.example.app;
 
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -20,6 +21,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+
 
 public class LaptopConfiguratorModellazioneGestioneConoscezaApp extends Application {
 
